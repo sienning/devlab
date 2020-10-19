@@ -1,6 +1,8 @@
 .App {
+  color : #302f31 !important;
   background-color: #ece8dc;
   height: 100%;
   width: 100%;
-  background-image: url('./daliy.png');
+  background-image: url('./daily.png');
+  text-align: justify;
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Header } from 'semantic-ui-react';
+import { Header, Grid } from 'semantic-ui-react';
 import Chargement from './Chargement';
+import Article1 from './Article1';
 
 class Tableau1 extends Component {
     state = {
@@ -26,7 +27,6 @@ class Tableau1 extends Component {
     render(){
         const {
             isLoading,
-            data
         } = this.state;
         return(
             <div>
@@ -34,8 +34,8 @@ class Tableau1 extends Component {
                     isLoading ?
                     <Chargement text="Chargement de l'API"/>:
                     <div>
-                        <Header>Daily Prophet</Header>
-                        <p><b>Valeur : </b>{data.value}</p>
+                        <Header textAlign='center' >Daily Prophet logo</Header>
+                        <Article1/>
                     </div>
                 }
             </div>
