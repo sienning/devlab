@@ -32,9 +32,9 @@ class Tableau1 extends Component {
             <div>
                 {
                     isLoading ?
-                    <Chargement text="Chargement de l'API"/>:
+                    <Chargement text="Chargement de l'API"/> :
                     <div>
-                        <Header textAlign='center' >Daily Prophet logo</Header>
+                        <Header textAlign='center' >DAILY WETLAND</Header>
                         <Article1/>
                     </div>
                 }
