@@ -15,6 +15,8 @@
   font-size: 0.8em !important;
   letter-spacing: -0.6px;
   line-height: 1.1;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .titre1 {
@@ -43,6 +45,18 @@
 
 
 .titre-lettre {
+  text-align: center !important;
   font-size: 14em !important;
   font-family: 'Fredericka the Great', cursive;
+}
+
+.titre-vertical {
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.article:hover {
+  cursor: pointer;
+  text-shadow: 0 0 10px #b8964d, 0 0 20px #b8964d, 0 0 30px #b8964d, 0 0 40px #b8964d, 0 0 50px #b8964d, 0 0 60px #b8964d, 0 0 70px #b8964d;
 }
