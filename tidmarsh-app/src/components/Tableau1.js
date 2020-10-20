@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Header, Grid } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
 import Chargement from './Chargement';
 import Article1 from './Article1';
 
