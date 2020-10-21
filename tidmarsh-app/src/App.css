@@ -4,6 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap');
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .App {
   color : #302f31 !important;
   background-color: #ece8dc;
@@ -19,28 +24,44 @@
   padding-bottom: 50px;
 }
 
+.border-article {
+  border: 5px solid transparent;
+  /* border: 5px #302e31 solid; */
+  padding: 10px 20px;
+  border-image: url("./images/barre-3-HP.jpg") 30 round;
+  border-image: url("./images/barre-4-HP.jpg") 30 round;
+}
+
+p {
+  line-height: 1.1;
+}
+
 .titre1 {
   letter-spacing: 4px;
   text-align: center;
   font-size: 7em !important;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-transform: uppercase;
 }
 
 .titre2 {
   font-size: 6em !important;
   font-family: 'Patua One', cursive;
+  text-transform: uppercase;
 }
 
 .titre3 {
   letter-spacing: 3px;
   font-size: 4em !important;
   font-family: 'Bevan', cursive;
+  text-transform: uppercase;
 }
 
 .titre4 {
   letter-spacing: 3px;
   font-size: 4em !important;
   font-family: 'Londrina Solid', cursive;
+  text-transform: uppercase;
 }
 
 
@@ -48,6 +69,7 @@
   text-align: center !important;
   font-size: 14em !important;
   font-family: 'Fredericka the Great', cursive;
+  text-transform: uppercase;
 }
 
 .titre-vertical {
@@ -55,9 +77,37 @@
   writing-mode: vertical-rl;
   text-orientation: mixed;
   padding-bottom: 0;
+  text-transform: uppercase;
 }
 
 .article:hover {
   cursor: pointer;
   text-shadow: 0 0 10px #b8964d;
+}
+
+
+.ui.modal>.content, .ui.modal>.header {
+  background: none !important;
+}
+
+.ui.active.modal {
+  background-color: #ece8dc;
+  background-image: url('./images/daily.png');
+}
+
+i.icon.close:before {
+  content : "X" !important;
+  font-family: 'PATUA ONE';
+}
+
+i.icon.archive:before {
+  content : url("./images/main-droite.jpg") !important;
+}
+
+.ui.header>.icon+.content {
+  font-family: 'Patua One', cursive;
+}
+
+.ui.modal {
+  border-radius: 0 !important;
 }

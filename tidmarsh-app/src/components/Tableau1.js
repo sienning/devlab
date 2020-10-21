@@ -32,7 +32,7 @@ class Tableau1 extends Component {
             <div>
                 {
                     isLoading ?
-                    <Chargement text="Chargement de l'API"/> :
+                    <Chargement style={{ minHeight: '100%'  }} text="Chargement de l'API"/> :
                     <div>
                         <Header textAlign='center' >DAILY WETLAND</Header>
                         <Article1/>
