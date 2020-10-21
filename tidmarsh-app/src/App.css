@@ -54,9 +54,10 @@
   position: relative;
   writing-mode: vertical-rl;
   text-orientation: mixed;
+  padding-bottom: 0;
 }
 
 .article:hover {
   cursor: pointer;
-  text-shadow: 0 0 10px #b8964d, 0 0 20px #b8964d, 0 0 30px #b8964d, 0 0 40px #b8964d, 0 0 50px #b8964d, 0 0 60px #b8964d, 0 0 70px #b8964d;
+  text-shadow: 0 0 10px #b8964d;
 }
