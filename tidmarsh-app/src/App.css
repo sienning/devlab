@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 html, body {
   height: 100%;
@@ -25,6 +26,10 @@ html, body {
   padding-bottom: 50px;
 }
 
+.header {
+  margin-bottom: 30px !important;
+}
+
 .border-article {
   border: 5px solid transparent;
   /* border: 5px #302e31 solid; */
@@ -32,9 +37,12 @@ html, body {
   border-image: url("./images/border.png") 30 stretch;
 }
 
+
 p {
   line-height: 1.1;
 }
+
+
 
 .texte {
   font-family: 'Grenze Gotisch', cursive;
@@ -51,7 +59,7 @@ p {
 }
 
 .titre2 {
-  font-size: 6em !important;
+  font-size: 3.6em !important;
   font-family: 'Patua One', cursive;
   text-transform: uppercase;
 }
@@ -70,9 +78,17 @@ p {
   text-transform: uppercase;
 }
 
+/* TITRE Daily data'venir */
+.titre5 {
+  font-size: 5em !important;
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .titre-lettre {
   text-align: center !important;
-  font-size: 14em !important;
+  font-size: 10em !important;
   font-family: 'Fredericka the Great', cursive;
   text-transform: uppercase;
 }
@@ -110,8 +126,13 @@ i.icon.archive:before {
 
 .ui.header>.icon+.content {
   font-family: 'Patua One', cursive;
+  text-transform: uppercase;
 }
 
 .ui.modal {
   border-radius: 0 !important;
+}
+
+.mini-titre {
+  font-size: 1.3em !important;
 }

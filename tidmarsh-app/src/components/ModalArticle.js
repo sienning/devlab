@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Header, Modal } from 'semantic-ui-react'
 
 function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
     const [open, setOpen] = useState(false);
+    let newContenuArticle = contenuArticle.replace('\n', <br/>);
 
     return (
         <div>
@@ -18,6 +19,7 @@ function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
                 <Modal.Content>
                     <div className="border-article texte">
                         {contenuArticle}
+                        {/* {newContenuArticle} */}
                     </div>
                 </Modal.Content>
                 
