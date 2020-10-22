@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Felipa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300&display=swap');
 
 html, body {
   height: 100%;
@@ -27,13 +28,18 @@ html, body {
 .border-article {
   border: 5px solid transparent;
   /* border: 5px #302e31 solid; */
-  padding: 10px 20px;
-  border-image: url("./images/barre-3-HP.jpg") 30 round;
-  border-image: url("./images/barre-4-HP.jpg") 30 round;
+  padding: 30px 20px 30px 20px;
+  border-image: url("./images/border.png") 30 stretch;
 }
 
 p {
   line-height: 1.1;
+}
+
+.texte {
+  font-family: 'Grenze Gotisch', cursive;
+  line-height: 1.4;
+  font-size: 1.4em !important;
 }
 
 .titre1 {
@@ -64,7 +70,6 @@ p {
   text-transform: uppercase;
 }
 
-
 .titre-lettre {
   text-align: center !important;
   font-size: 14em !important;
@@ -84,7 +89,6 @@ p {
   cursor: pointer;
   text-shadow: 0 0 10px #b8964d;
 }
-
 
 .ui.modal>.content, .ui.modal>.header {
   background: none !important;

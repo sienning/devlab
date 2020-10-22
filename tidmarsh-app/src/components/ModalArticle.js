@@ -16,7 +16,9 @@ function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
             >
                 <Header icon='archive' content={headerArticle} />
                 <Modal.Content>
-                    {contenuArticle}
+                    <div className="border-article texte">
+                        {contenuArticle}
+                    </div>
                 </Modal.Content>
                 
             </Modal>
