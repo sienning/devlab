@@ -2,9 +2,11 @@ import React from 'react';
 import { Loader } from 'semantic-ui-react';
 
 
-const Chargement = ({ text }) => {
+const Chargement = ({ texte }) => {
     return(
-        <Loader active inline='centered'>{text}</Loader>
+        <div>
+            <Loader active inline='centered'>{texte}</Loader>
+        </div>
     );
 }
 
