@@ -10,7 +10,7 @@ export const HumidityTemperatureChart = () => {
 
     const getHumidityDatas = async () => {
         setIsLoading(true);
-        await axios.get('http://chain-api.media.mit.edu/scalar_data/?sensor_id=12011&timestamp__gte=1603061380&timestamp__lt=1603169380')
+        await axios.get('http://chain-api.media.mit.edu/aggregate_data/?sensor_id=9909&aggtime=1h')
             .then((response) => {
                 setHumidityDataFilterOneDay(response.data.data);
                 setIsLoading(false);
@@ -20,8 +20,9 @@ export const HumidityTemperatureChart = () => {
 
     const getTemperatureDatas = async () => {
         setIsLoading(true);
-        await axios.get('http://chain-api.media.mit.edu/scalar_data/?sensor_id=12010&timestamp__gte=1603061380&timestamp__lt=1603169380')
+        await axios.get('http://chain-api.media.mit.edu/aggregate_data/?sensor_id=9908&aggtime=1h')
             .then((response) => {
+                console.log(response.data);
                 setTemperatureDataFilterOneDay(response.data.data);
                 setIsLoading(false);
             })
@@ -32,7 +33,7 @@ export const HumidityTemperatureChart = () => {
         const result = [];
         for (let i = 0; i < 24; ++i) {
             const toFound = '2020-10-19T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
-            result.push({ x: i, y: datas.find(data => data.timestamp.includes(toFound)).value });
+            result.push({ x: i, y: datas.find(data => data.timestamp.includes(toFound)).mean });
         }
         setHumidityDatas(result);
     };
@@ -41,7 +42,7 @@ export const HumidityTemperatureChart = () => {
         const result = [];
         for (let i = 0; i < 24; ++i) {
             const toFound = '2020-10-19T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
-            result.push({ x: i, y: ((datas.find(data => data.timestamp.includes(toFound)).value ) - 32) * 5 / 9 });
+            result.push({ x: i, y: datas.find(data => data.timestamp.includes(toFound)).mean});
         }
         setTemperatureDatas(result);
     };
