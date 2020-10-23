@@ -3,7 +3,6 @@ import { Header, Modal } from 'semantic-ui-react'
 
 function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
     const [open, setOpen] = useState(false);
-    let newContenuArticle = contenuArticle.replace('\n', <br/>);
 
     return (
         <div>
@@ -18,8 +17,13 @@ function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
                 <Header icon='archive' content={headerArticle} />
                 <Modal.Content>
                     <div className="border-article texte">
-                        {contenuArticle}
-                        {/* {newContenuArticle} */}
+                        {
+                            contenuArticle.map(p => {
+                                return(
+                                    <p>{p}</p>
+                                )
+                            })
+                        }
                     </div>
                 </Modal.Content>
                 

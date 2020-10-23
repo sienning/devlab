@@ -122,6 +122,11 @@ p {
   text-shadow: 0 0 10px #b8964d;
 }
 
+.imageArticle:hover {
+  cursor: pointer;
+  box-shadow : 0 0 10px #b8964d;
+}
+
 .ui.modal>.content, .ui.modal>.header {
   background: none !important;
 }

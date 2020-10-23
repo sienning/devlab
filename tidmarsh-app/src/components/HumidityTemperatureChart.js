@@ -86,11 +86,12 @@ const HumidityTemperatureChart = () => {
                 color: 'white'
             }}
         >
-            <p class="ui label" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#556B2F', color: '#ece8dc'}}>
+            <p class="ui label" style={{ fontFamily: 'Londrina Solid', writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#556B2F', color: '#ece8dc'}}>
                 Humidité
             </p>
-            <Chart data={data} axes={axes} />
-            <p class="ui label" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#860909', color: '#ece8dc'}}>
+
+                <Chart data={data} axes={axes} />
+            <p class="ui label" style={{ fontFamily: 'Special Elite', writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#860909', color: '#ece8dc'}}>
                 Température
             </p>
         </div>
