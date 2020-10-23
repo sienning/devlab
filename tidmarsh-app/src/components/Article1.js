@@ -110,7 +110,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                         </Grid>
                         <Grid>
                             <Grid.Column width={1}>
-                                <h1 className="titre2" style={{ paddingTop : "200px" }}><span className="titre-vertical">Projet IIM MTD-IWM</span></h1>
+                                <h1 className="titre2" style={{ paddingTop : "300px" }}><span className="titre-vertical">{articles[4].titre}</span></h1>
                             </Grid.Column>
                             <Grid.Column width={6}>
                                 <div className="titre2 mini-titre">The daily Data'venir</div>
@@ -144,11 +144,9 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
                                 <h1 className='titre3'></h1>
-                                {texte[5]}
-                                {texte[6]}
+                                <ModalArticle texteArticle={texte[4]+texte[5]} headerArticle={articles[4].titre} contenuArticle={articles[4].contenu} />
                                 {texte[5]}
                                 <h1 className="titre2">23/10/2020</h1>
-
                             </Grid.Column>
                         </Grid>
                         {/* <h1 className="titre2">GROS TITRE EXEMPLE 3</h1> */}
