@@ -35,7 +35,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 {/* METEO */}
                                 <span className="titre3 mini-titre">Météo du jour</span><br/>
                                 <span className="titre2 mini-titre">Aujourd'hui :  {Math.floor(temperatureData[temperatureData.length-1].mean)}°C </span><Icon loading name="sun" /><br/><br/>
-                                <span className="titre2 mini-titre">24/10/2020 :  {Math.floor(temperatureData[temperatureData.length-2].mean)}°C </span><Icon loading name="sun" /><br/><br/>
+                                <span className="titre2 mini-titre">24/10/2020 :  {Math.floor(temperatureData[temperatureData.length-2].mean)}°C </span><Icon name="tint" /><br/><br/>
                                 <span className="titre2 mini-titre">25/10/2020 :  {Math.floor(temperatureData[temperatureData.length-3].mean)}°C </span><Icon loading name="sun" />
                             </Grid.Column>
 
