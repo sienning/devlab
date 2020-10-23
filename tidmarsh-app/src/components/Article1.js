@@ -3,8 +3,9 @@ import { Grid, Image, Icon } from 'semantic-ui-react';
 import ModalArticle from './ModalArticle';
 import articlesJSON from '../articles.json';
 import Chargement from './Chargement';
-import Chart from './HumidityTemperatureChart'
-import Histo from './'
+import Chart from './HumidityTemperatureChart';
+import Histo from './WhiteLightChart';
+import ModalImage from './ModalImage';
 
 const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
     const [texte, setTexte] = useState(articlesJSON.fakeArticles);
@@ -21,7 +22,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                 <div>
                     <div className="header">
                         <Grid columns={3} divided className="texte">
-                            <Grid.Column>
+                            <Grid.Column width={3}>
                                 {/* JEU CONCOURS */}
                                 <div>
                                     <span className="titre4 mini-titre">Jeu concours</span><br/>
@@ -30,38 +31,37 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
 
                                 </div>
                             </Grid.Column>
-                            <Grid.Column>
+                            <Grid.Column width={4}>
                                 {/* METEO */}
                                 <span className="titre3 mini-titre">Météo du jour</span><br/><br/>
                                 <span className="titre2 mini-titre">Aujourd'hui :  {Math.floor(temperatureData[temperatureData.length-1].mean)}°C </span><Icon loading name="sun" /><br/><br/>
                                 <span className="titre2 mini-titre">24/10/2020 :  {Math.floor(temperatureData[temperatureData.length-2].mean)}°C </span><Icon loading name="sun" /><br/><br/>
                                 <span className="titre2 mini-titre">25/10/2020 :  {Math.floor(temperatureData[temperatureData.length-3].mean)}°C </span><Icon loading name="sun" />
-
                             </Grid.Column>
 
-                            <Grid.Column><span className="titre2 mini-titre">Signe astrologique</span><br/>
+                            <Grid.Column width={8}><span className="titre2 mini-titre">Signe astrologique</span><br/>
                                 {/* SIGNE ASTROLOGIQUE */}
-                                <Grid columns={2}>
+                                <Grid columns={2} style={{ marginTop : "-20px" }}>
                                     <Grid.Column width={2}>
                                         <Image src="../images/grenouille.png" width={30} />
                                     </Grid.Column>
-                                    <Grid.Column width={13}>
+                                    <Grid.Column width={14}>
                                         Recru descence chez les grenouilles, vous semblez être fait pour rencontrer l’âme soeur ! +10% de présence depuis 30 jours.                                
                                     </Grid.Column>
                                 </Grid>
-                                <Grid columns={2}>
+                                <Grid columns={2} style={{ marginTop : "-28px" }}>
                                     <Grid.Column width={2}>
                                         <Image src="../images/cerf.png" width={30} /> 
                                     </Grid.Column>
-                                    <Grid.Column width={13}>
+                                    <Grid.Column width={14} >
                                         Il n’y a pas foule chez les cerfs, soyez plus ambicieux et n’hésitez pas à parcourir vos terres : -15% de présences de cerf dans la zone depuis 30 jours.
                                     </Grid.Column>
                                 </Grid>
-                                <Grid columns={2}>
+                                <Grid columns={2} style={{ marginTop : "-28px" }}>
                                     <Grid.Column width={2}>
                                         <Image src="../images/papillion.png" width={30} />
                                     </Grid.Column>
-                                    <Grid.Column width={13}>
+                                    <Grid.Column width={14}>
                                         Pour les papillons, il est temps de prendre votre envole et de vous reprendre en main, ne vous laissez pas surprendre par les araignées -10% de papillons de présence depuis 30 jours.
                                     </Grid.Column>
                                 </Grid>
@@ -102,7 +102,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
 
                             </Grid.Column>
                             <Grid.Column width={8}>
-                                <Image src="./images/zh-nb.png"/>
+                                <ModalImage srcImage="./images/zh-nb.png" />
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
                                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             
@@ -110,7 +110,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                         </Grid>
                         <Grid>
                             <Grid.Column width={1}>
-                                <h1 className="titre2" style={{ paddingTop : "300px" }}><span className="titre-vertical">Projet IIM MTD-IWM</span></h1>
+                                <h1 className="titre2" style={{ paddingTop : "200px" }}><span className="titre-vertical">Projet IIM MTD-IWM</span></h1>
                             </Grid.Column>
                             <Grid.Column width={6}>
                                 <div className="titre2 mini-titre">The daily Data'venir</div>
@@ -130,6 +130,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 </Grid>
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px",  marginBottom : "6px" }} />
                                 <Chart/>
+                                <Histo/>
                             </Grid.Column>
                             <Grid.Column width={1}>
                                 <h1 className="titre2"><Image src="./images/main-droite.jpg" style={{ display : 'inline', transform : "rotate(90deg)", marginRight : "30px" }} /><span className="titre-vertical" >Une terre survoltée</span></h1>
@@ -138,15 +139,19 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                <Image src="./images/zh-hum.jpg" style={{ width : "100%", marginTop : "10px" }} />
+                                <ModalImage srcImage="./images/zh-hum.jpg" />
                                 <ModalArticle texteArticle={texte[3]} headerArticle={articles[3].titre} contenuArticle={articles[3].contenu} />
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
-                                <h1 className='titre3'>TITRE EXEMPLE</h1>
+                                <h1 className='titre3'></h1>
                                 {texte[5]}
+                                {texte[6]}
+                                {texte[5]}
+                                <h1 className="titre2">23/10/2020</h1>
+
                             </Grid.Column>
                         </Grid>
-                        <h1 className="titre2">GROS TITRE EXEMPLE 3</h1>
+                        {/* <h1 className="titre2">GROS TITRE EXEMPLE 3</h1> */}
                     </div>
                 </div>
             }

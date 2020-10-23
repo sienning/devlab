@@ -3,8 +3,7 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 import { Container } from 'semantic-ui-react';
 import Tableau1 from './components/Tableau1';
-import { HumidityTemperatureChart } from './components/HumidityTemperatureChart';
-import { WhiteLightChart } from './components/WhiteLightChart';
+// import { WhiteLightChart } from './components/WhiteLightChart';
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
       <Container>
           <Tableau1/>
           {/* <HumidityTemperatureChart/> */}
-          <WhiteLightChart/>
+          {/* <WhiteLightChart/> */}
       </Container>
     </div>
   );

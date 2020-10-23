@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Chart } from 'react-charts';
 
-
-export const WhiteLightChart = () => {
+const WhiteLightChart = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [whiteLightDatas, setWhiteLightDatas] = useState([]);
 
@@ -59,6 +58,7 @@ export const WhiteLightChart = () => {
     return (
         <div
             style={{
+                marginTop: "20px",
                 width: '400px',
                 height: '300px',
                 display: 'flex',
@@ -72,3 +72,5 @@ export const WhiteLightChart = () => {
         </div>
     )
 }
+
+export default WhiteLightChart;
