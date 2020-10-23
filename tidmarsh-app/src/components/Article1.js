@@ -31,9 +31,12 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                             <Grid.Column>
                                 {/* METEO */}
                                 <span className="titre3 mini-titre">Météo du jour</span><br/>
-                                <span className="titre2 mini-titre">Aujourd'hui{temperatureData.value}°C </span><Icon loading name="sun" />
+                                <span className="titre2 mini-titre">Aujourd'hui :  {temperatureData[0].value}°C </span><Icon loading name="sun" />
+                                <span className="titre2 mini-titre">24/10/2020 :  {temperatureData[1].value}°C </span><Icon loading name="sun" />
+                                <span className="titre2 mini-titre">25/10/2020 :  {temperatureData[2].value}°C </span><Icon loading name="sun" />
 
                             </Grid.Column>
+
                             <Grid.Column><span className="titre2 mini-titre">Signe astrologique</span><br/>
                                 {/* SIGNE ASTROLOGIQUE */}
                                 <Grid columns={2}>

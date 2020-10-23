@@ -37,7 +37,7 @@ class Tableau1 extends Component {
             console.log("rqHumidity", responses[1].data);
             console.log("rqPressure", responses[2].data);
             
-            this.setState({ isLoading : false, temperature : responses[0].data.data[0], humidity : responses[1].data, pressure : responses[2].data });
+            this.setState({ isLoading : false, temperature : responses[0].data.data, humidity : responses[1].data, pressure : responses[2].data });
         }))
         .catch((error) => { console.log(error) });
     }
