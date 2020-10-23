@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap');
 
 html, body {
   height: 100%;
@@ -53,7 +55,7 @@ p {
 .titre1 {
   letter-spacing: 4px;
   text-align: center;
-  font-size: 7em !important;
+  font-size: 6em !important;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-transform: uppercase;
 }
@@ -82,6 +84,20 @@ p {
 .titre5 {
   font-size: 5em !important;
   font-family: 'Special Elite', cursive;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.titre6 {
+  font-family: 'Noto Serif', serif;
+  font-size: 2em !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.titre7 {
+  font-family: 'Grenze Gotisch', cursive;
+  font-size: 2em !important;
   text-align: center;
   text-transform: uppercase;
 }

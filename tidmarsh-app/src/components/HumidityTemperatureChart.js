@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Chart } from 'react-charts';
 
 
-export const HumidityTemperatureChart = () => {
+const HumidityTemperatureChart = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [humidityDatas, setHumidityDatas] = useState([]);
     const [temperatureDatas, setTemperatureDatas] = useState([]);
@@ -79,10 +79,12 @@ export const HumidityTemperatureChart = () => {
             style={{
                 width: '400px',
                 height: '300px',
-                margin: '50px'
+                // margin: '50px'
             }}
         >
             <Chart data={data} axes={axes} />
         </div>
     )
 }
+
+export default HumidityTemperatureChart;
