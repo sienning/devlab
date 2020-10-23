@@ -32,9 +32,9 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                             <Grid.Column>
                                 {/* METEO */}
                                 <span className="titre3 mini-titre">Météo du jour</span><br/><br/>
-                                <span className="titre2 mini-titre">Aujourd'hui :  {temperatureData[0].value}°C </span><Icon loading name="sun" /><br/><br/>
-                                <span className="titre2 mini-titre">24/10/2020 :  {temperatureData[1].value}°C </span><Icon loading name="sun" /><br/><br/>
-                                <span className="titre2 mini-titre">25/10/2020 :  {temperatureData[2].value}°C </span><Icon loading name="sun" />
+                                <span className="titre2 mini-titre">Aujourd'hui :  {Math.floor(temperatureData[temperatureData.length-1].mean)}°C </span><Icon loading name="sun" /><br/><br/>
+                                <span className="titre2 mini-titre">24/10/2020 :  {Math.floor(temperatureData[temperatureData.length-2].mean)}°C </span><Icon loading name="sun" /><br/><br/>
+                                <span className="titre2 mini-titre">25/10/2020 :  {Math.floor(temperatureData[temperatureData.length-3].mean)}°C </span><Icon loading name="sun" />
 
                             </Grid.Column>
 
@@ -108,37 +108,31 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                         </Grid>
                         <Grid>
                             <Grid.Column width={1}>
-                                <h1 className="titre2"><span className="titre-vertical">DAILY PROPHET</span></h1>
+                                <h1 className="titre2"><span className="titre-vertical">Projet IIM MTD-IWM</span></h1>
                             </Grid.Column>
-                            <Grid.Column width={6}>
-                                <div className="titre2 mini-titre">Grands <span className="titre-lettre">L</span>ieux inquiétants ?</div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <ModalArticle texteArticle={texte[2]} headerArticle={articles[2].titre} contenuArticle={articles[2].contenu} />
+                            <Grid.Column width={4}>
+                                <div className="titre2 mini-titre"><span className="titre-lettre">U</span>ne terre survoltée</div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <ModalArticle texteArticle={texte[3]} headerArticle={articles[3].titre} contenuArticle={articles[3].contenu} />
+                                {/* <ModalArticle texteArticle={texte[3]} headerArticle={articles[3].titre} contenuArticle={articles[3].contenu} /> */}
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <ModalArticle texteArticle={texte[4]} headerArticle={articles[4].titre} contenuArticle={articles[4].contenu} />
-                                <Grid columns={5}>
-                                    <Grid.Column width={3}>
+                                {/* <ModalArticle texteArticle={texte[4]} headerArticle={articles[4].titre} contenuArticle={articles[4].contenu} /> */}
+                                <Grid columns={3}>
+                                    <Grid.Column width={5}>
                                         <Image style={{ marginTop: "10px" }} src="./images/barre-HP.jpg" />
                                         <div className="titre-lettre">t</div>
                                     </Grid.Column>
-                                    <Grid.Column width={3}>
+                                    <Grid.Column width={5}>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </Grid.Column>
-                                    <Grid.Column width={3}>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </Grid.Column>
-                                    <Grid.Column width={3}>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </Grid.Column>
-                                    <Grid.Column width={3}>
+                                    <Grid.Column width={5}>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </Grid.Column>
                                 </Grid>
 
                             </Grid.Column>
                             <Grid.Column width={1}>
-                                <h1 className="titre2"><span className="titre-vertical">DAILY PROPHET</span></h1>
+                                <h1 className="titre2"><span className="titre-vertical">The Daily data'venir</span></h1>
                             </Grid.Column>
                             <Grid.Column width={7}>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -146,7 +140,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <Chart/>
                                 <ModalArticle texteArticle={texte[4]} headerArticle={articles[4].titre} contenuArticle={articles[4].contenu} />
-                                <h1 className='titre3'>TITRE EXEMPLE</h1>
+                                {/* <h1 className='titre3'>TITRE EXEMPLE</h1> */}
                             </Grid.Column>
                         </Grid>
                         <h1 className="titre2">GROS TITRE EXEMPLE 3</h1>
