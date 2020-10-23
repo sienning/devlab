@@ -57,10 +57,12 @@ const HumidityTemperatureChart = () => {
             {
                 label: 'Humidité',
                 data: humidityDatas,
+                color: '#556B2F'
             },
             {
                 label: 'Température',
-                data: temperatureDatas
+                data: temperatureDatas,
+                color: '#860909'
             }
         ],
         [humidityDatas, temperatureDatas]
@@ -68,8 +70,8 @@ const HumidityTemperatureChart = () => {
 
     const axes = React.useMemo(
         () => [
-            { primary: true, type: 'linear', position: 'bottom' },
-            { type: 'linear', position: 'left' }
+            { primary: true, type: 'utc', position: 'bottom' },
+            { type: 'linear', position: 'left' },
         ],
         []
     )
@@ -77,12 +79,20 @@ const HumidityTemperatureChart = () => {
     return (
         <div
             style={{
-                width: '400px',
-                height: '300px',
-                // margin: '50px'
+                width: '300px',
+                height: '200px',
+                display: 'flex',
+                fontWeight: 'bold',
+                color: 'white'
             }}
         >
+            <p class="ui label" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#556B2F', color: '#ece8dc'}}>
+                Humidité
+            </p>
             <Chart data={data} axes={axes} />
+            <p class="ui label" style={{ writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#860909', color: '#ece8dc'}}>
+                Température
+            </p>
         </div>
     )
 }

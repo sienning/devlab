@@ -86,6 +86,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <div><span className="titre-lettre">P</span><span className="titre3 mini-titre" style={{ marginLeft : '-30px' }}>roblème d'envergure</span></div>
                                 <ModalArticle texteArticle={texte[0]} headerArticle={articles[0].titre} contenuArticle={articles[0].contenu}/>
                                 <Image src="./images/barre-2-HP.jpg"/>
+                                {texte[4]}
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <h1 className="titre2">Wetland</h1>
@@ -108,18 +109,15 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                         </Grid>
                         <Grid>
                             <Grid.Column width={1}>
-                                <h1 className="titre2"><span className="titre-vertical">Projet IIM MTD-IWM</span></h1>
+                                <h1 className="titre2" style={{ paddingTop : "300px" }}><span className="titre-vertical">Projet IIM MTD-IWM</span></h1>
                             </Grid.Column>
-                            <Grid.Column width={4}>
-                                <div className="titre2 mini-titre"><span className="titre-lettre">U</span>ne terre survoltée</div>
+                            <Grid.Column width={6}>
+                                <div className="titre2 mini-titre">The daily Data'venir</div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <ModalArticle texteArticle={texte[3]} headerArticle={articles[3].titre} contenuArticle={articles[3].contenu} />
-                                {/* <ModalArticle texteArticle={texte[3]} headerArticle={articles[3].titre} contenuArticle={articles[3].contenu} /> */}
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                {/* <ModalArticle texteArticle={texte[4]} headerArticle={articles[4].titre} contenuArticle={articles[4].contenu} /> */}
                                 <Grid columns={3}>
                                     <Grid.Column width={5}>
-                                        <Image style={{ marginTop: "10px" }} src="./images/barre-HP.jpg" />
+                                        <Image style={{ marginTop: "10px" }} src="./images/barre-2-HP.jpg" />
                                         <div className="titre-lettre">t</div>
                                     </Grid.Column>
                                     <Grid.Column width={5}>
@@ -129,18 +127,22 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </Grid.Column>
                                 </Grid>
-
+                                <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px",  marginBottom : "6px" }} />
+                                <Chart/>
                             </Grid.Column>
                             <Grid.Column width={1}>
-                                <h1 className="titre2"><span className="titre-vertical">The Daily data'venir</span></h1>
+                                <h1 className="titre2"><Image src="./images/main-droite.jpg" style={{ display : 'inline', transform : "rotate(90deg)", marginRight : "30px" }} /><span className="titre-vertical" >Une terre survoltée</span></h1>
                             </Grid.Column>
-                            <Grid.Column width={7}>
+                            <Grid.Column width={8}>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                <Chart/>
-                                <ModalArticle texteArticle={texte[4]} headerArticle={articles[4].titre} contenuArticle={articles[4].contenu} />
-                                {/* <h1 className='titre3'>TITRE EXEMPLE</h1> */}
+                                <Image src="./images/zh-hum.jpg" style={{ width : "100%", marginTop : "10px" }} />
+                                <ModalArticle texteArticle={texte[3]} headerArticle={articles[3].titre} contenuArticle={articles[3].contenu} />
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
+                                <h1 className='titre3'>TITRE EXEMPLE</h1>
+                                {texte[5]}
                             </Grid.Column>
                         </Grid>
                         <h1 className="titre2">GROS TITRE EXEMPLE 3</h1>
