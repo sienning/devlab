@@ -4,6 +4,7 @@ import ModalArticle from './ModalArticle';
 import articlesJSON from '../articles.json';
 import Chargement from './Chargement';
 import Chart from './HumidityTemperatureChart'
+import Histo from './'
 
 const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
     const [texte, setTexte] = useState(articlesJSON.fakeArticles);
