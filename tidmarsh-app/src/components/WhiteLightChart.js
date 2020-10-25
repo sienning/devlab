@@ -8,7 +8,7 @@ const WhiteLightChart = () => {
 
     const getWhiteLightDatas = async () => {
         setIsLoading(true);
-        await axios.get('http://chain-api.media.mit.edu/aggregate_data/?sensor_id=9913&aggtime=1h')
+        await axios.get('https://chain-api.media.mit.edu/aggregate_data/?sensor_id=9913&aggtime=1h')
             .then((response) => {
                 setWhiteLightDataFilterOneDay(response.data.data);
                 setIsLoading(false);
