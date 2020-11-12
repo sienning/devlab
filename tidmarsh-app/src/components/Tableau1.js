@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Header } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import Chargement from './Chargement';
 import Article1 from './Article1';
 
@@ -71,7 +71,7 @@ class Tableau1 extends Component {
                     <Chargement style={{ minHeight: '100%'  }} text="Chargement de l'API"/> :
                     <div>
                         
-                        <h1 className='titre5' >The daily data'venir</h1>
+                        <h1 className='titre5' ><Image src="./images/logo.svg" fluid /></h1>
                         {console.log(temperature)}
                         <Article1 
                             isLoading={isLoading}

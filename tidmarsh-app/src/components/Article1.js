@@ -21,15 +21,12 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                 <Chargement/> : 
                 <div>
                     <div className="header">
-                        <Grid columns={3} divided className="texte">
+                        <Grid stackable columns={3} divided className="texte">
                             <Grid.Column width={3}>
                                 {/* JEU CONCOURS */}
-                                <div>
-                                    <span className="titre4 mini-titre">Jeu concours</span><br/>
-                                    À gagner +3% d’humidité sur la zone humide est de Tidmarsh soit <span className="titre2 mini-titre">{humidityData.value}{humidityData.unit}</span><span className="titre3 mini-titre"> + 3%</span>
-                                    <br/>L’équivalent du gain en humidité des  19 derniers mois sur cette zone !
-
-                                </div>
+                                <span className="titre4 mini-titre">Jeu concours</span><br/>
+                                À gagner +3% d’humidité sur la zone humide est de Tidmarsh soit <span className="titre2 mini-titre">{humidityData.value}{humidityData.unit}</span><span className="titre3 mini-titre"> + 3%</span>
+                                <br/>L’équivalent du gain en humidité des  19 derniers mois sur cette zone !
                             </Grid.Column>
                             <Grid.Column width={4}>
                                 {/* METEO */}
