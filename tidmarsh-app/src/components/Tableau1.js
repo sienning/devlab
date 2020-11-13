@@ -70,7 +70,6 @@ class Tableau1 extends Component {
                     isLoading ?
                     <Chargement style={{ minHeight: '100%'  }} text="Chargement de l'API"/> :
                     <div>
-                        
                         <h1 className='titre5' ><Image src="./images/logo.svg" fluid /></h1>
                         {console.log(temperature)}
                         <Article1 
