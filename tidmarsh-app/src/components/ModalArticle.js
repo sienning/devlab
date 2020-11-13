@@ -12,7 +12,7 @@ function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
                 open={open}
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
-                trigger={<div className="article"><p>{texteArticle}</p></div>}
+                trigger={<div className="article vertical-mobile"><p>{texteArticle}</p></div>}
             >
                 <Header icon='archive' content={headerArticle} />
                 <Modal.Content>

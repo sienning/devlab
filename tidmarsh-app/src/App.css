@@ -39,12 +39,9 @@ html, body {
   border-image: url("./images/border.png") 30 stretch;
 }
 
-
 p {
   line-height: 1.1;
 }
-
-
 
 .texte {
   font-family: 'Grenze Gotisch', cursive;
@@ -145,6 +142,7 @@ i.icon.archive:before {
   content : url("./images/main-droite.jpg") !important;
 }
 
+
 .ui.header>.icon+.content {
   font-family: 'Patua One', cursive;
   text-transform: uppercase;
@@ -156,4 +154,31 @@ i.icon.archive:before {
 
 .mini-titre {
   font-size: 1.3em !important;
+}
+
+.padding-300 {
+  padding-top: 300px;
+}
+
+@media only screen and (max-width: 767px) {
+  .titre-vertical {
+    position: relative;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    text-transform: uppercase;
+  }
+  .padding-300 {
+    padding-top: 0;
+  }
+  .ui.image {
+    margin: auto;
+  }
+
+  .vertical-mobile {
+    writing-mode: vertical-lr;
+    margin: auto;
+    height: 100px;
+    max-height: 30%;
+  }
+
 }

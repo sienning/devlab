@@ -51,7 +51,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                         <Image src="../images/cerf.png" width={30} /> 
                                     </Grid.Column>
                                     <Grid.Column width={14} >
-                                        Il n’y a pas foule chez les cerfs, soyez plus ambicieux et n’hésitez pas à parcourir vos terres : -15% de présences de cerf dans la zone depuis 30 jours.
+                                        Il n’y a pas foule chez les cerfs, soyez plus ambicieux et n’hésitez pas à parcourir vos terres : -15% de présence de cerf dans la zone depuis 30 jours.
                                     </Grid.Column>
                                 </Grid>
                                 <Grid columns={2} style={{ marginTop : "-28px" }}>
@@ -67,7 +67,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                     </div>
 
                     <div className="border-article">
-                        <Grid columns={3}>
+                        <Grid stackable columns={3}>
                             <Grid.Column width={4}><Image src="./images/exclusive.jpg" style={{ marginTop: '6px' }} />
                             </Grid.Column>
                             <Grid.Column width={5} className="texte">
@@ -79,7 +79,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                         </Grid>
                             <h1 className="titre1">Zone humide, milieu en danger !</h1>
                             <h1 className="titre7">Le dossier du mois : <span className="titre6 mini-titre">à la rencontre de l'écosystème tidmarsh massachussets</span></h1>
-                        <Grid>
+                        <Grid stackable>
                             <Grid.Column width={3}>
                                 <div><span className="titre-lettre">P</span><span className="titre3 mini-titre" style={{ marginLeft : '-30px' }}>roblème d'envergure</span></div>
                                 <ModalArticle texteArticle={texte[0]} headerArticle={articles[0].titre} contenuArticle={articles[0].contenu}/>
@@ -102,15 +102,14 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <ModalImage srcImage="./images/zh-nb.png" />
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
                                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            
                             </Grid.Column>
                         </Grid>
-                        <Grid>
+                        <Grid stackable>
                             <Grid.Column width={1}>
-                                <h1 className="titre2" style={{ paddingTop : "300px" }}><span className="titre-vertical">{articles[4].titre}</span></h1>
+                                <h1 className="titre2 padding-300"><span className="titre-vertical">{articles[4].titre}</span></h1>
                             </Grid.Column>
                             <Grid.Column width={6}>
-                                <div className="titre2 mini-titre">The daily Data'venir</div>
+                                <div className="titre2 mini-titre">The Daily Data'Venir</div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 <Grid columns={3}>
