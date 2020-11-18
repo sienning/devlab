@@ -65,7 +65,7 @@ const WhiteLightChart = () => {
                 fontWeight: 'bold',
             }}
         >
-            <p class="ui label" style={{ fontFamily: 'Fredericka the Great', writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#696969', color: '#ece8dc'}}>
+            <p className="ui label" style={{ fontFamily: 'Fredericka the Great', writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#696969', color: '#ece8dc'}}>
                 Lumière blanche
             </p>
             <Chart data={data} axes={axes} series={series}/>

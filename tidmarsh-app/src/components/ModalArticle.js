@@ -18,9 +18,9 @@ function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
                 <Modal.Content>
                     <div className="border-article texte">
                         {
-                            contenuArticle.map(p => {
+                            contenuArticle.map((p, i) => {
                                 return(
-                                    <p>{p}</p>
+                                    <p key={i}>{p}</p>
                                 )
                             })
                         }

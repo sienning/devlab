@@ -51,7 +51,7 @@ const HumidityTemperatureChart = () => {
         console.log('setTemperature');
         const result = [];
         for (let i = 0; i < 24; ++i) {
-            const toFound = '2020-10-19T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
+            const toFound = '2020-11-17T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
             console.log(datas);
             result.push({ x: i, y: datas.find(data => data.timestamp.includes(toFound)).mean});
         }
@@ -90,11 +90,11 @@ const HumidityTemperatureChart = () => {
                 color: 'white'
             }}
         >
-            <p class="ui label" style={{ fontFamily: 'Londrina Solid', writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#556B2F', color: '#ece8dc'}}>
+            <p className="ui label" style={{ fontFamily: 'Londrina Solid', writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#556B2F', color: '#ece8dc'}}>
                 Humidité
             </p>
                 <Chart data={data} axes={axes} />
-            <p class="ui label" style={{ fontFamily: 'Special Elite', writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#860909', color: '#ece8dc'}}>
+            <p className="ui label" style={{ fontFamily: 'Special Elite', writingMode: 'vertical-rl', textOrientation: 'upright', textAlign: 'center', backgroundColor: '#860909', color: '#ece8dc'}}>
                 Température
             </p>
         </div>

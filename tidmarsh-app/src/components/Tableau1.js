@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Image } from 'semantic-ui-react';
 import Chargement from './Chargement';
 import Article1 from './Article1';
+// import Article2 from './Article2';
+import HeaderDaily from './HeaderDaily';
 
 class Tableau1 extends Component {
     state = {
@@ -56,7 +58,6 @@ class Tableau1 extends Component {
         .catch((error) => { console.log(error) });
     }
 
-
     render(){
         const {
             isLoading,
@@ -68,11 +69,16 @@ class Tableau1 extends Component {
             <div>
                 {
                     isLoading ?
-                    <Chargement style={{ minHeight: '100%'  }} text="Chargement de l'API"/> :
+                    <Chargement style={{ minHeight: '100%' }} text="Chargement de l'API"/> :
                     <div>
                         <h1 className='titre5' ><Image src="./images/logo.svg" fluid /></h1>
-                        {console.log(temperature)}
-                        <Article1 
+                        <HeaderDaily
+                            temperature={temperature}
+                            humidity={humidity}
+                            pressure={pressure}
+                        />
+                        {/* <Article2 isLoading={isLoading /> */}
+                        <Article1
                             isLoading={isLoading}
                             temperature={temperature}
                             humidity={humidity}
