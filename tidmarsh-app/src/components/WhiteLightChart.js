@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import dayjs from 'dayjs';
 import { Chart } from 'react-charts';
 
 const WhiteLightChart = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [whiteLightDatas, setWhiteLightDatas] = useState([]);
+
+    const yesterday = dayjs().subtract(1, 'day').format('YYYY-MM-DD').toString();
 
     const getWhiteLightDatas = async () => {
         setIsLoading(true);
@@ -19,7 +22,7 @@ const WhiteLightChart = () => {
     const setWhiteLightDataFilterOneDay = datas => {
         const result = [];
         for (let i = 0; i < 24; ++i) {
-            const toFound = '2020-10-19T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
+            const toFound = yesterday + 'T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
             result.push({ x: i, y: datas.find(data => data.timestamp.includes(toFound)).mean});
         }
         setWhiteLightDatas(result);

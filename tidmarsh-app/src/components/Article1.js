@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { Grid, Image, Embed } from 'semantic-ui-react';
+=======
+import { Grid, Image, Icon, Embed } from 'semantic-ui-react';
+>>>>>>> 044e9cf1bbb61dc87d5f6248b501c3491ccff6ed
 import ModalArticle from './ModalArticle';
 import articlesJSON from '../articles.json';
 import Chargement from './Chargement';
@@ -47,11 +51,11 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 <div className="titre2 mini-titre">Grands Lieux inquiétants ?</div>
                                 <ModalArticle texteArticle={texte[4]} headerArticle={articles[2].titre} contenuArticle={articles[2].contenu} />
-
                             </Grid.Column>
                             <Grid.Column width={8}>
                                 <ModalImage srcImage="./images/zh-nb.png" />
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
+<<<<<<< HEAD
                                 <Embed
                                     id="b60f3d6d-01a3-4cf6-a5c1-0cb1bdc0f0c1"
                                     // autoplay
@@ -65,6 +69,9 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <iframe width="420" height="315" autoPlay
                                     src="https://tidmarsh.media.mit.edu/b60f3d6d-01a3-4cf6-a5c1-0cb1bdc0f0c1">
                                 </iframe>
+=======
+                                
+>>>>>>> 044e9cf1bbb61dc87d5f6248b501c3491ccff6ed
                                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             </Grid.Column>
                         </Grid>
@@ -100,6 +107,8 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <ModalImage srcImage="./images/zh-hum.jpg" />
+                                
+
                                 <ModalArticle texteArticle={texte[3]} headerArticle={articles[3].titre} contenuArticle={articles[3].contenu} />
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
