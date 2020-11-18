@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import dayjs from 'dayjs';
 import { Chart } from 'react-charts';
 
 
@@ -7,6 +8,8 @@ const HumidityTemperatureChart = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [humidityDatas, setHumidityDatas] = useState([]);
     const [temperatureDatas, setTemperatureDatas] = useState([]);
+
+    const yesterday = dayjs().subtract(1, 'day').format('YYYY-MM-DD').toString();
 
     useEffect(() => {
         getHumidityDatas();
@@ -17,7 +20,6 @@ const HumidityTemperatureChart = () => {
         setIsLoading(true);
         await axios.get('https://chain-api.media.mit.edu/aggregate_data/?sensor_id=9909&aggtime=1h')
         .then((response) => {
-            console.log("humidity data : ", response.data.data);
             setHumidityDataFilterOneDay(response.data.data);
             setIsLoading(false);
         })
@@ -28,7 +30,6 @@ const HumidityTemperatureChart = () => {
         setIsLoading(true);
         await axios.get('https://chain-api.media.mit.edu/aggregate_data/?sensor_id=9908&aggtime=1h')
         .then((response) => {
-            console.log("temperature : ", response.data);
             setTemperatureDataFilterOneDay(response.data.data);
             setIsLoading(false);
         })
@@ -36,23 +37,18 @@ const HumidityTemperatureChart = () => {
     };
 
     const setHumidityDataFilterOneDay = datas => {
-        console.log('setHumidity');
         const result = [];
-        console.log(datas[0].timestamp);
         for (let i = 0; i < 24; ++i) {
-            const toFound = '2020-10-19T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
-            console.log(toFound);
+            const toFound = yesterday + 'T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
             result.push({ x: i, y: datas.find(data => data.timestamp.includes(toFound)).mean });
         }
         setHumidityDatas(result);
     };
 
     const setTemperatureDataFilterOneDay = datas => {
-        console.log('setTemperature');
         const result = [];
         for (let i = 0; i < 24; ++i) {
-            const toFound = '2020-10-19T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
-            console.log(datas);
+            const toFound = yesterday + 'T' + (i.toString().length === 1 ? '0' + i.toString() : i.toString());
             result.push({ x: i, y: datas.find(data => data.timestamp.includes(toFound)).mean});
         }
         setTemperatureDatas(result);
