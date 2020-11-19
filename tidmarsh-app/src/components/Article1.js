@@ -51,19 +51,19 @@ const Article1 = ({ isLoading }) => {
                             <Grid.Column width={8}>
                                 <ModalImage srcImage="./images/zh-nb.png" />
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
-                                <Embed
+                                {/* <Embed
                                     id="b60f3d6d-01a3-4cf6-a5c1-0cb1bdc0f0c1"
                                     // autoplay
                                     placeholder="./images/zh-nb.png"
                                     source="blob:https://tidmarsh.media.mit.edu/"
-                                />
-                                <video width="320" height="240" autoPlay>
+                                /> */}
+                                {/* <video width="320" height="240" autoPlay> */}
                                     {/* <source src="blob:https://tidmarsh.media.mit.edu/b60f3d6d-01a3-4cf6-a5c1-0cb1bdc0f0c1"/> */}
-                                    <source src="https://www.youtube.com/watch?v=HTZudKi36bo" type="video"></source>
-                                </video>
-                                <iframe width="420" height="315" autoPlay
+                                    {/* <source src="https://www.youtube.com/watch?v=HTZudKi36bo" type="video"></source> */}
+                                {/* </video> */}
+                                {/* <iframe width="420" height="315" autoPlay
                                     src="https://tidmarsh.media.mit.edu/b60f3d6d-01a3-4cf6-a5c1-0cb1bdc0f0c1">
-                                </iframe>
+                                </iframe> */}
                                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             </Grid.Column>
                         </Grid>
