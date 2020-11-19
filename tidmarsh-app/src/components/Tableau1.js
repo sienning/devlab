@@ -80,9 +80,6 @@ class Tableau1 extends Component {
                         {/* <Article2 isLoading={isLoading /> */}
                         <Article1
                             isLoading={isLoading}
-                            temperature={temperature}
-                            humidity={humidity}
-                            pressure={pressure}
                         />
                     </div>
                 }
