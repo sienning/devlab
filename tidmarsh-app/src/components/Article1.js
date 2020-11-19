@@ -19,7 +19,9 @@ const Article1 = ({ isLoading }) => {
                 <div>
                     <div className="border-article">
                         <Grid stackable columns={3}>
-                            <Grid.Column width={4}><Image src="./images/exclusive.jpg" style={{ marginTop: '6px' }} />
+                            <Grid.Column width={4}>
+                                <Image src="./images/exclusive.jpg" style={{ marginTop: '6px' }} />
+                                <Image src="./images/MIT_ML_Logo.gif" style={{ maxWidth: "250px" }} />
                             </Grid.Column>
                             <Grid.Column width={5} className="texte">
                                 Tidmarsh, propriété de 600 hectare dans le Massachusetts a été pendant plus d'un siècle une grande ferme de canneberges. Transformée ensuite en zone humide, c’est maintenant le sanctuaire de la faune de Mass Audubon Tidmarsh.
