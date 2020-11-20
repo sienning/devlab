@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Header, Modal } from 'semantic-ui-react'
 
 function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {

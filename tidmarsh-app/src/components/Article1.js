@@ -11,17 +11,44 @@ const Article1 = ({ isLoading }) => {
     const [texte, setTexte] = useState(articlesJSON.fakeArticles);
     const [articles, setArticles] = useState(articlesJSON.articles);
     
+    const toggleItem = (e) => {
+        console.log(document.getElementById("test"));
+        console.log(e);
+
+        if (e.length > 0) {
+            console.log("hey");
+            e.currentTarget.classList.add("animate__wobble");
+        }
+        
+        // for (var i = 0; i < e.length; i++) {
+        //     e[i].addEventListener("click", function(e) {
+        //         var current = this;
+        //         for (var i = 0; i < e.length; i++) {
+        //             if (current != e[i]) {
+        //                 e[i].classList.remove('animate__wobble');
+        //             } else if (current.classList.contains('animate__wobble') === true) {
+        //                 current.classList.remove('animate__wobble');
+        //             } else {
+        //                 current.classList.add('animate__wobble')
+        //             }
+        //         }
+        //         e.preventDefault();    
+        //     });
+        // };
+    }
+    toggleItem(document.querySelectorAll('.anim'));
+
     return(
         <div>
             {
                 isLoading ?
-                <Chargement/> : 
+                <Chargement/> :
                 <div>
                     <div className="border-article">
                         <Grid stackable columns={3}>
                             <Grid.Column width={4}>
                                 <Image src="./images/exclusive.jpg" style={{ marginTop: '6px' }} />
-                                <Image src="./images/MIT_ML_Logo.gif" style={{ maxWidth: "250px" }} />
+                                <Image src="./images/MIT_ML_Logo.gif" style={{ maxWidth: "245px" }} />
                             </Grid.Column>
                             <Grid.Column width={5} className="texte">
                                 Tidmarsh, propriété de 600 hectare dans le Massachusetts a été pendant plus d'un siècle une grande ferme de canneberges. Transformée ensuite en zone humide, c’est maintenant le sanctuaire de la faune de Mass Audubon Tidmarsh.
@@ -74,7 +101,7 @@ const Article1 = ({ isLoading }) => {
                                 <h1 className="titre2 padding-300"><span className="titre-vertical">{articles[4].titre}</span></h1>
                             </Grid.Column>
                             <Grid.Column width={6}>
-                                <div className="animate__wobble titre2 mini-titre ">The Daily Data'Venir</div>
+                                <div className="anim titre2 mini-titre " id="test" onClick={toggleItem} >The Daily Data'Venir</div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 <Grid columns={3}>
