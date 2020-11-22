@@ -59,6 +59,7 @@ const Article1 = ({ isLoading }) => {
                     idHeron.style.left = 0 + "px";
                     idHeron.style.bottom = -900 + "px";
                     idHeron.style.display = "none";
+                    
                 }
             }, 0.0001);
     }
