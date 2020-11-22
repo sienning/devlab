@@ -12,11 +12,11 @@ function ModalHeron() {
                 onClose={() => setOpen(false)}
             >
                 <Header icon='archive' content="Attention !" />
-                <Modal.Content image>
-                    <Image src='./images/heron.svg' width="large" />
+                <Modal.Content image className="texte">
+                    <Image src='./images/heron.svg' width="large" className="border-article" />
                     <Modal.Description>
-                        <p>Il semblerait qu'un <b>héron</b> vient de passer à l'instant. L'avez-vous aperçu ?</p> 
-                        <p><b>Ouvrez l'oeil !</b></p>
+                        <p>Attention ! Il semblerait qu'un <b>héron</b> vient de passer à l'instant. L'avez-vous aperçu ?</p> 
+                        <p><b>Ouvrez l'oeil !</b> ... et votre esprit.</p>
                     </Modal.Description>
                 </Modal.Content>
             </Modal>
