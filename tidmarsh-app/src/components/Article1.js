@@ -7,10 +7,12 @@ import Chart from './HumidityTemperatureChart';
 import Histo from './WhiteLightChart';
 import ModalImage from './ModalImage';
 import 'animate.css'
+import ModalHeron from './ModalHeron';
 
 const Article1 = ({ isLoading }) => {
     const [texte, setTexte] = useState(articlesJSON.fakeArticles);
     const [articles, setArticles] = useState(articlesJSON.articles);
+    const [open, setOpen] = useState(false);
     
     const toggleWobble = (e) => {
         e.currentTarget.classList.add("animate__wobble");
@@ -44,22 +46,24 @@ const Article1 = ({ isLoading }) => {
         let idHeron = document.getElementById("heron-img");
         let leftPos = 0;
         let bottomPos = -900;
+        setOpen(false);
 
         idHeron.style.display = "block";
 
         var interval = setInterval(
             () => {
-                if (leftPos < 9000 && bottomPos < 9000) {
+                if (leftPos < 2000 && bottomPos < 2000) {
                     leftPos = leftPos + 7;
                     bottomPos = bottomPos + 7;
                     idHeron.style.left = leftPos + "px";
                     idHeron.style.bottom = bottomPos + "px";
                 } else {
+                    console.log("clear")
                     clearInterval(interval);
+                    setOpen(true);
                     idHeron.style.left = 0 + "px";
                     idHeron.style.bottom = -900 + "px";
                     idHeron.style.display = "none";
-                    
                 }
             }, 0.0001);
     }
@@ -71,6 +75,10 @@ const Article1 = ({ isLoading }) => {
                 <Chargement/> :
                 <div>
                     <img id="heron-img" src="./images/heron.svg" className="heron-img" />
+                    {
+                        open ?
+                        <ModalHeron /> : null
+                    }
                     <div className="border-article">
                         <Grid stackable columns={3}>
                             <Grid.Column width={4}>
