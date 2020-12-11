@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Header, Modal } from 'semantic-ui-react'
 
 function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
@@ -18,9 +18,9 @@ function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
                 <Modal.Content>
                     <div className="border-article texte">
                         {
-                            contenuArticle.map(p => {
+                            contenuArticle.map((p, i) => {
                                 return(
-                                    <p>{p}</p>
+                                    <p key={i}>{p}</p>
                                 )
                             })
                         }

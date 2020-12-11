@@ -13,7 +13,7 @@ const ModalImage = ({ srcImage }) => {
       trigger={<div><Image className='imageArticle' src={srcImage} /></div>}
     >
       <Modal.Content image>
-          <Image size={300} src={srcImage} />
+          <Image src={srcImage} />
       </Modal.Content>
     </Modal>
   );
