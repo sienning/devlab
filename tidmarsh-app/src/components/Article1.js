@@ -3,9 +3,10 @@ import { Grid, Image, Icon, Embed } from 'semantic-ui-react';
 import ModalArticle from './ModalArticle';
 import articlesJSON from '../articles.json';
 import Chargement from './Chargement';
-import Chart from './HumidityTemperatureChart';
-import Histo from './WhiteLightChart';
+import HumidityTemperatureChart from './Charts/HumidityTemperatureChart';
+import WhiteLightChart from './Charts/WhiteLightChart';
 import ModalImage from './ModalImage';
+import dayjs from 'dayjs';
 
 const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
     const [texte, setTexte] = useState(articlesJSON.fakeArticles);
@@ -14,11 +15,14 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
     const [humidityData, setHumidityData] = useState(humidity);
     const [pressureData, setPressureData] = useState(pressure);
 
+
+    const day = dayjs().subtract(20, 'day');
+
     return(
         <div>
             {
                 isLoading ?
-                <Chargement/> : 
+                <Chargement/> :
                 <div>
                     <div className="header">
                         <Grid stackable columns={3} divided className="texte">
@@ -43,12 +47,12 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                         <Image src="../images/grenouille.png" width={30} />
                                     </Grid.Column>
                                     <Grid.Column width={14}>
-                                        Recru descence chez les grenouilles, vous semblez être fait pour rencontrer l’âme soeur ! +10% de présence depuis 30 jours.                                
+                                        Recru descence chez les grenouilles, vous semblez être fait pour rencontrer l’âme soeur ! +10% de présence depuis 30 jours.
                                     </Grid.Column>
                                 </Grid>
                                 <Grid columns={2} style={{ marginTop : "-28px" }}>
                                     <Grid.Column width={2}>
-                                        <Image src="../images/cerf.png" width={30} /> 
+                                        <Image src="../images/cerf.png" width={30} />
                                     </Grid.Column>
                                     <Grid.Column width={14} >
                                         Il n’y a pas foule chez les cerfs, soyez plus ambicieux et n’hésitez pas à parcourir vos terres : -15% de présence de cerf dans la zone depuis 30 jours.
@@ -74,7 +78,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 Tidmarsh, propriété de 600 hectare dans le Massachusetts a été pendant plus d'un siècle une grande ferme de canneberges. Transformée ensuite en zone humide, c’est maintenant le sanctuaire de la faune de Mass Audubon Tidmarsh.
                             </Grid.Column>
                             <Grid.Column width={7} className="texte">
-                                Les chercheurs du groupe Environnements réactifs du Media Lab ont développé des réseaux de capteurs pour documenter les processus écologiques à différentes échelles : spatiales et temporelles. De petits capteurs retranscrivent des informations sur le climat, le sol, l'eau et d'autres données environnementales, tandis que d'autres capteurs diffusent du son depuis le haut des arbres et sous l'eau.    
+                                Les chercheurs du groupe Environnements réactifs du Media Lab ont développé des réseaux de capteurs pour documenter les processus écologiques à différentes échelles : spatiales et temporelles. De petits capteurs retranscrivent des informations sur le climat, le sol, l'eau et d'autres données environnementales, tandis que d'autres capteurs diffusent du son depuis le haut des arbres et sous l'eau.
                             </Grid.Column>
                         </Grid>
                             <h1 className="titre1">Zone humide, milieu en danger !</h1>
@@ -100,7 +104,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                             <Grid.Column width={8}>
                                 <ModalImage srcImage="./images/zh-nb.png" />
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px" }} />
-                                
+
                                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             </Grid.Column>
                         </Grid>
@@ -125,8 +129,8 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                     </Grid.Column>
                                 </Grid>
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px",  marginBottom : "6px" }} />
-                                <Chart/>
-                                <Histo/>
+                                <HumidityTemperatureChart day={day} />
+                                <WhiteLightChart day={day} />
                             </Grid.Column>
                             <Grid.Column width={1}>
                                 <h1 className="titre2"><Image src="./images/main-droite.jpg" style={{ display : 'inline', transform : "rotate(90deg)", marginRight : "30px" }} /><span className="titre-vertical" >Une terre survoltée</span></h1>
@@ -136,7 +140,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                                 <ModalImage srcImage="./images/zh-hum.jpg" />
-                                
+
 
                                 <ModalArticle texteArticle={texte[3]} headerArticle={articles[3].titre} contenuArticle={articles[3].contenu} />
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -144,7 +148,7 @@ const Article1 = ({ isLoading, temperature, humidity, pressure }) => {
                                 <h1 className='titre3'></h1>
                                 <ModalArticle texteArticle={texte[4]+texte[5]} headerArticle={articles[4].titre} contenuArticle={articles[4].contenu} />
                                 {texte[5]}
-                                <h1 className="titre2">23/10/2020</h1>
+                                <h1 className="titre2">{ day.format("DD/MM/YYYY") }</h1>
                             </Grid.Column>
                         </Grid>
                         {/* <h1 className="titre2">GROS TITRE EXEMPLE 3</h1> */}
