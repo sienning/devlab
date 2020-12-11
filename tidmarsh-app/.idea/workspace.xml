@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f54f15f7-8e16-412b-9d3f-6cd9611a2a97" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HumidityTemperatureChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HumidityTemperatureChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WhiteLightChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhiteLightChart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +38,21 @@
       <option name="presentableId" value="Default" />
       <updated>1605714489350</updated>
       <workItem from="1605714492181" duration="713000" />
+      <workItem from="1607683150993" duration="100000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="277" y="25" width="886" height="795" key="CommitChangelistDialog2" timestamp="1607683140285">
+      <screen x="0" y="25" width="1440" height="795" />
+    </state>
+    <state x="277" y="25" width="886" height="795" key="CommitChangelistDialog2/0.25.1440.795/-504.-1415.2560.1415@0.25.1440.795" timestamp="1607683140285" />
     <state x="421" y="179" width="597" height="490" key="find.popup" timestamp="1605714625035">
       <screen x="0" y="25" width="1440" height="798" />
     </state>
