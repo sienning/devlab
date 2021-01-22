@@ -3,7 +3,6 @@ import Chargement from './Chargement';
 import { Image } from 'semantic-ui-react'
 
 const Article1 = ({ isLoading }) => {
-
     return(
         <div>
             {

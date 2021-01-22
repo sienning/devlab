@@ -3,7 +3,6 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import { Chart } from 'react-charts';
 
-
 const HumidityTemperatureChart = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [humidityDatas, setHumidityDatas] = useState([]);
