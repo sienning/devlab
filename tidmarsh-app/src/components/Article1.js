@@ -42,7 +42,6 @@ const Article1 = ({ isLoading }) => {
 
     // -------------------------------------
     const toggleHeron = () => {
-        console.log("toggle heron");
         let idHeron = document.getElementById("heron-img");
         let leftPos = 0;
         let bottomPos = -900;
@@ -58,7 +57,6 @@ const Article1 = ({ isLoading }) => {
                     idHeron.style.left = leftPos + "px";
                     idHeron.style.bottom = bottomPos + "px";
                 } else {
-                    console.log("clear")
                     clearInterval(interval);
                     setOpen(true);
                     idHeron.style.left = 0 + "px";
@@ -146,8 +144,8 @@ const Article1 = ({ isLoading }) => {
                                     </Grid.Column>
                                 </Grid>
                                 <Image src="./images/barre-3-HP.jpg" style={{ width : "100%", marginTop : "3px",  marginBottom : "6px" }} />
-                                <Chart/>
-                                <Histo/>
+                                {/* <Chart/> */}
+                                {/* <Histo/> */}
                             </Grid.Column>
                             <Grid.Column width={1}>
                                 <h1 className="titre2"><Image src="./images/main-droite.jpg" style={{ display : 'inline', transform : "rotate(90deg)", marginRight : "30px" }} /><span className="titre-vertical" >Une terre survoltée</span></h1>

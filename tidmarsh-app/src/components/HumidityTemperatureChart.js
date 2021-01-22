@@ -12,8 +12,8 @@ const HumidityTemperatureChart = () => {
     const yesterday = dayjs().subtract(1, 'day').format('YYYY-MM-DD').toString();
 
     useEffect(() => {
-        getHumidityDatas();
-        getTemperatureDatas();
+        // getHumidityDatas();
+        // getTemperatureDatas();
     }, []);
 
     const getHumidityDatas = async () => {

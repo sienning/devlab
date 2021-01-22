@@ -29,7 +29,7 @@ const WhiteLightChart = () => {
     };
 
     useEffect(() => {
-        getWhiteLightDatas();
+        // getWhiteLightDatas();
     }, []);
 
     const data = React.useMemo(

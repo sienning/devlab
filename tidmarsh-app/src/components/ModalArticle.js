@@ -3,7 +3,6 @@ import { Header, Modal } from 'semantic-ui-react'
 
 function ModalArticle({ texteArticle, headerArticle, contenuArticle }) {
     const [open, setOpen] = useState(false);
-
     return (
         <div>
             <Modal
