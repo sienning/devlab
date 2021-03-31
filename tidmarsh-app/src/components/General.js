@@ -5,7 +5,7 @@ import axios from 'axios';
 // import Article1 from './Article1';
 // import HeaderDaily from './HeaderDaily';
 import HTMLFlipBook from "react-pageflip";
-// import Tableau1 from './Tableau1';
+import Tableau1 from './Tableau1';
 import Tableau2 from './Tableau2';
 import Chargement from './Chargement';
 
@@ -20,8 +20,8 @@ class General extends Component {
     };
 
     componentDidMount() {
-        // this.chargementAPI();
-        // this.chargementHumidite();
+        this.chargementAPI();
+        this.chargementHumidite();
     }
 
     chargementAPI = async () => {
@@ -73,6 +73,12 @@ class General extends Component {
                 {
                     isLoading ?
                     <Chargement/> :
+                    // <Tableau1
+                    //     isLoading={isLoading}
+                    //     temperature={temperature}
+                    //     humidity={humidity}
+                    //     pressure={pressure}
+                    // />
                     <Tableau2
                         isLoading={isLoading}
                         temperature={temperature}

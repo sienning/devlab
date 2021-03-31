@@ -17,14 +17,13 @@ class Tableau1 extends Component {
     };
 
     componentDidMount() {
-        // this.chargementAPI();
-        // this.chargementHumidite();
+        this.chargementAPI();
+        this.chargementHumidite();
     }
 
     chargementAPI = async () => {
         this.setState({ isLoading : true });
 
-        // let temperature = "http://chain-api.media.mit.edu/scalar_data/?sensor_id=12021";
         let temperature = "https://chain-api.media.mit.edu/aggregate_data/?timestamp__lt=1602617712&sensor_id=12021&timestamp__gte=1559417712&aggtime=1d";
 
         // let humidity = "https://chain-api.media.mit.edu/aggregate_data/?timestamp__lt=1602617712&sensor_id=12011&timestamp__gte=1559417712&aggtime=1d";
@@ -80,6 +79,7 @@ class Tableau1 extends Component {
             </div>
         );
     }
+    
 }
 
 export default Tableau1;
