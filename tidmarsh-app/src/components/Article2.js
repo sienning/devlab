@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Chargement from './Chargement';
 import { Image } from 'semantic-ui-react'
 
