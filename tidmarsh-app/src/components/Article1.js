@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Image, Embed } from 'semantic-ui-react';
+import { Grid, Image } from 'semantic-ui-react';
 import ModalArticle from './ModalArticle';
 import articlesJSON from '../articles.json';
 import Chargement from './Chargement';

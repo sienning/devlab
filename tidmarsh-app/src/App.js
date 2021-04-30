@@ -14,8 +14,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import axios from "axios";
+const queryClient = new QueryClient();
 
-
+axios.defaults.baseURL = "https://chain-api.media.mit.edu";
 function App() {
   return (
     <div className="App">
@@ -51,6 +54,13 @@ function App() {
         </Router>
         <Footer />
       </div>
+      {/* <QueryClientProvider client={queryClient}>
+        <Container>
+          <PageArticle>
+            <Article1 />
+          </PageArticle>
+        </Container>
+      </QueryClientProvider> */}
     </div>
   );
 }
