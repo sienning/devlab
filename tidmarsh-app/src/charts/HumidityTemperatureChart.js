@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import dayjs from "dayjs";
+import React from "react";
 import { Chart } from "react-charts";
 import { useHumidityData, useTemperatureData } from "./charts.service";
 import Chargement from "../components/Chargement";

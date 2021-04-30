@@ -10,8 +10,8 @@ import ModalImage from "../components/ModalImage";
 import ModalHeron from "../components/ModalHeron";
 
 const Article1 = ({ isLoading }) => {
-  const [texte, setTexte] = useState(articlesJSON.fakeArticles);
-  const [articles, setArticles] = useState(articlesJSON.articles);
+  const texte = articlesJSON.fakeArticles;
+  const articles = articlesJSON.articles;
   const [open, setOpen] = useState(false);
 
   const toggleWobble = (e) => {
@@ -81,7 +81,12 @@ const Article1 = ({ isLoading }) => {
         <Chargement />
       ) : (
         <div>
-          <img id="heron-img" src="./images/heron.svg" className="heron-img" />
+          <img
+            id="heron-img"
+            src="./images/heron.svg"
+            className="heron-img"
+            alt="heron"
+          />
           {open ? <ModalHeron /> : null}
           <div className="border-article">
             <Grid stackable columns={3}>
@@ -330,7 +335,7 @@ const Article1 = ({ isLoading }) => {
                   src="./images/barre-3-HP.jpg"
                   style={{ width: "100%", marginTop: "3px" }}
                 />
-                <h1 className="titre3"></h1>
+                <h3 className="titre2">{articles[4].titre}</h3>
                 <ModalArticle
                   texteArticle={texte[4] + texte[5]}
                   headerArticle={articles[4].titre}
