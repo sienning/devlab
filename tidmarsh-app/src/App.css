@@ -9,31 +9,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap');
 
 
-*, html, body {
+body {
   height: 100%;
   margin: 0;
-}
-
-.App {
   color : #302f31 !important;
-  background-color: #ece8dc;
   height: 100%;
   width: 100%;
-  background-image: url('./images/daily.png');
+  background-color: #ece8dc !important;
+  background-image: url('./images/daily.png') !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: justify;
   font-family: 'Felipa', cursive;
   font-size: 0.8em !important;
   letter-spacing: -0.6px;
   line-height: 1.1;
-  padding-top: 50px;
-  padding-bottom: 50px;
+}
+
+.App .Navbar{
+  font-size: 30px;
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  /* height: 150px; */
+  padding: 10px 30px;
+  color: #1d1d1c;
+}
+.Navbar .logo-petit {
+  transition: 0.3s;
+  display: block;
+}
+.Navbar .logo-petit:hover {
+  filter: drop-shadow(0 0 18px #b8964d);
+}
+
+.Navbar .lien-accueil {
+  float: left;
+}
+.Navbar .lien-a-propos, .Navbar .lien-kiosque {
+  float: right;
+  height: 100%;
+  padding-top: 40px;
+  text-align: center;
+  font-family: 'Grenze Gotisch', cursive;
+  margin-right: 20px;
+}
+
+.Navbar a { 
+  color: #1d1d1c;
+  transition: 0.3s;
+}
+.Navbar a:hover { 
+  color: #b8964d;
 }
 
 .accueil {
   font-size: 20px;
 }
-
-
 
 .header {
   margin-bottom: 30px !important;
@@ -41,10 +74,10 @@
 
 #header-title {
   margin: auto;
-  margin-top: 25%;
+  padding-top: 100px;
   /* width: 70vw; */
   width: 100%;
-  position: sticky !important;
+  /* position: fixed !important; */
   transition: 0.2s;
   top: 0;
   height: fit-content;
@@ -207,4 +240,13 @@ i.icon.archive:before {
   position: absolute;
   left : 0px;
   bottom : -900px;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 50px;
+  box-shadow: 0 0 10px 10px #cecec2;
+  background-color: #f1f0ec;
+  min-height: 250px;
+  padding-top: 50px;
 }
