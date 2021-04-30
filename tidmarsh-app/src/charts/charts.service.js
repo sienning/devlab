@@ -59,7 +59,6 @@ export const useTemperatureData = (config = {}) => {
     ["temperature"],
     () =>
       axios.get(`${TEMPERATURE_ENDPOINT}`).then((response) => {
-        console.log({ response });
         return {
           ...response?.data,
           data: getLastDayData(response?.data?.data),
