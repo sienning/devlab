@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Grid, Image, Embed } from 'semantic-ui-react';
+import { Grid, Image } from 'semantic-ui-react';
 import ModalArticle from './ModalArticle';
 import articlesJSON from '../articles.json';
 import Chargement from './Chargement';
 import Chart from './HumidityTemperatureChart';
 import Histo from './WhiteLightChart';
 import ModalImage from './ModalImage';
-import 'animate.css'
+// import 'animate.css'
 import ModalHeron from './ModalHeron';
 
 const Article1 = ({ isLoading }) => {
