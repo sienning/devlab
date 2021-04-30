@@ -6,7 +6,6 @@ import Chargement from "../components/Chargement";
 import Chart from "../charts/HumidityTemperatureChart";
 import Histo from "../charts/WhiteLightChart";
 import ModalImage from "../components/ModalImage";
-// import 'animate.css'
 import ModalHeron from "../components/ModalHeron";
 
 const Article1 = ({ isLoading }) => {

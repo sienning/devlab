@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "semantic-ui-react";
+import { Image, Container } from "semantic-ui-react";
 import Chargement from "../components/Chargement";
 import HeaderDaily from "../components/HeaderDaily";
 import { useHumidity, usePressure, useTemperature } from "./articles.service";
@@ -16,7 +16,7 @@ const PageArticle = ({ children }) => {
     isLoadingTemperature || isLoadingHumidity || isLoadingPressure;
 
   return (
-    <div>
+    <Container>
       {isLoading ? (
         <Chargement style={{ minHeight: "100%" }} text="Chargement de l'API" />
       ) : (
@@ -32,7 +32,7 @@ const PageArticle = ({ children }) => {
           {children}
         </div>
       )}
-    </div>
+    </Container>
   );
 };
 

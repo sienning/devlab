@@ -67,21 +67,47 @@ body {
 .accueil {
   font-size: 20px;
 }
+#header-title {
+  margin: auto;
+  padding-top: 100px;
+  width: 100%;
+  transition: 0.2s;
+  top: 0;
+  height: fit-content;
+}
+
+.corps .articles-header {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.accueil .article-img {
+  transition: ease-out 0.6s;
+}
+
+.accueil .article-img:hover {
+  transition: 0.3s;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 13px #cecec2;
+}
+
+.accueil .voir-plus {
+  font-family: 'Grenze Gotisch', cursive;
+  color: #1d1d1c;
+  transition: 0.2s;
+  float: right;
+  font-size: 40px;
+}
+.accueil .voir-plus:hover {
+  text-shadow: 0 0 10px #b8964d;
+}
+
 
 .header {
   margin-bottom: 30px !important;
 }
 
-#header-title {
-  margin: auto;
-  padding-top: 100px;
-  /* width: 70vw; */
-  width: 100%;
-  /* position: fixed !important; */
-  transition: 0.2s;
-  top: 0;
-  height: fit-content;
-}
+
 
 .border-article {
   border: 5px solid transparent;

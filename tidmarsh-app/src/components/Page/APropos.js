@@ -6,6 +6,7 @@ class APropos extends Component {
     render() {
         return (
             <Container>
+                <Header as='h1'>À Propos</Header>
                 <Grid>
                     <Grid.Column>
                         <Header>Le projet Data'Venir</Header>

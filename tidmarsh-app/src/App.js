@@ -5,6 +5,7 @@ import 'semantic-ui-css/semantic.min.css'
 // import Tableau1 from './components/Tableau1';
 import Accueil from './components/Page/Accueil';
 import APropos from './components/Page/APropos';
+import Kiosque from './components/Page/Kiosque';
 import Footer from './components/Footer';
 // import { WhiteLightChart } from './components/WhiteLightChart';
 import { Image } from 'semantic-ui-react';
@@ -14,8 +15,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
 import { QueryClient, QueryClientProvider } from "react-query";
 import axios from "axios";
+import Article1 from './articles/Article1'
+import PageArticle from './articles/PageArticle'
 const queryClient = new QueryClient();
 
 axios.defaults.baseURL = "https://chain-api.media.mit.edu";
@@ -31,9 +35,9 @@ function App() {
                   <Image className="logo-petit" src="./images/logo-petit.svg" style={{ width: 90 }} />
                 </Link>
               </div>
-              
+
               <div className="lien-a-propos">
-                <Link to="/a-propos">À propos</Link>
+                <Link to="/a-propos">À Propos</Link>
               </div>
               <div className="lien-kiosque">
                 <Link to="/kiosque">Le Kiosque</Link>
@@ -45,6 +49,16 @@ function App() {
             <Switch>
               <Route path="/a-propos">
                 <APropos />
+              </Route>
+              <Route path="/kiosque">
+                <Kiosque />
+              </Route>
+              <Route path="/article/1">
+                <QueryClientProvider client={queryClient}>
+                    <PageArticle>
+                      <Article1 />
+                    </PageArticle>
+                </QueryClientProvider>
               </Route>
               <Route exact path="/">
                 <Accueil />
