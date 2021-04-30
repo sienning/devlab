@@ -39,6 +39,17 @@
   margin-bottom: 30px !important;
 }
 
+#header-title {
+  margin: auto;
+  margin-top: 25%;
+  /* width: 70vw; */
+  width: 100%;
+  position: sticky !important;
+  transition: 0.2s;
+  top: 0;
+  height: fit-content;
+}
+
 .border-article {
   border: 5px solid transparent;
   /* border: 5px #302e31 solid; */
