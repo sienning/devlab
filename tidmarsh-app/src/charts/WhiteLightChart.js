@@ -3,8 +3,8 @@ import { Chart } from "react-charts";
 import { useWhiteLightData } from "../charts/charts.service";
 import Chargement from "../components/Chargement";
 
-const WhiteLightChart = () => {
-  const { data: whiteLight, isLoading } = useWhiteLightData();
+const WhiteLightChart = ({ whiteLightSensorId }) => {
+  const { data: whiteLight, isLoading } = useWhiteLightData(whiteLightSensorId);
 
   const data = React.useMemo(
     () => [
