@@ -32,7 +32,7 @@ function App() {
             <nav className="Navbar">
               <div className="lien-accueil">
                 <Link to="/">
-                  <Image className="logo-petit" src="./images/logo-petit.svg" style={{ width: 90 }} />
+                  <Image className="logo-petit" src="../images/logo-petit.svg" style={{ width: 90 }} />
                 </Link>
               </div>
 

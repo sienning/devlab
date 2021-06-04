@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Grid, Header, Image } from 'semantic-ui-react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 class Accueil extends Component {
     // chargementAPI = async () => {
     //     this.setState({ isLoading: true });
@@ -43,13 +38,10 @@ class Accueil extends Component {
     //         })
     //         .catch((error) => { console.log(error) });
     // }
-    componentDidMount() {
-    }
     render() {
         return (
             <div>
                 <Container className="accueil">
-
                     <div id="header-title">
                         <Image src="./images/logo.svg" fluid />
                     </div>
@@ -81,19 +73,21 @@ class Accueil extends Component {
                                     <Header>Titre</Header>
                                     <Header.Subheader>Date</Header.Subheader>
                                     <Link to="/article/1">
-                                        <Image className="article-img" href="/article/1" src="./images/articles/article-1.png" />
-                                    </Link>                                </Grid.Column>
+                                        <Image className="article-img"src="./images/articles/article-1.png" />
+                                    </Link>
+                                </Grid.Column>
                                 <Grid.Column>
                                     <Header>Titre</Header>
                                     <Header.Subheader>Date</Header.Subheader>
                                     <Link to="/article/1">
-                                        <Image className="article-img" href="/article/1" src="./images/articles/article-1.png" />
-                                    </Link>                                </Grid.Column>
+                                        <Image className="article-img" src="./images/articles/article-1.png" />
+                                    </Link>
+                                </Grid.Column>
                                 <Grid.Column>
                                     <Header>Titre</Header>
                                     <Header.Subheader>Date</Header.Subheader>
                                     <Link to="/article/1">
-                                        <Image className="article-img" href="/article/1" src="./images/articles/article-1.png" />
+                                        <Image className="article-img" src="./images/articles/article-1.png" />
                                     </Link>
                                 </Grid.Column>
                             </Grid>

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Grid, Image } from "semantic-ui-react";
-import ModalArticle from "../components/ModalArticle";
+import ModalArticle from "./ModalArticle";
 import articlesJSON from "../articles.json";
 import Chargement from "../components/Chargement";
 import Chart from "../charts/HumidityTemperatureChart";
 import Histo from "../charts/WhiteLightChart";
-import ModalImage from "../components/ModalImage";
-import ModalHeron from "../components/ModalHeron";
+import ModalImage from "./ModalImage";
+import ModalHeron from "./ModalHeron";
 
 const Article1 = ({ isLoading }) => {
   const texte = articlesJSON.fakeArticles;
@@ -91,11 +91,11 @@ const Article1 = ({ isLoading }) => {
             <Grid stackable columns={3}>
               <Grid.Column width={4}>
                 <Image
-                  src="./images/exclusive.jpg"
+                  src="../images/exclusive.jpg"
                   style={{ marginTop: "6px" }}
                 />
                 <Image
-                  src="./images/MIT_ML_Logo.gif"
+                  src="../images/MIT_ML_Logo.gif"
                   style={{ maxWidth: "245px" }}
                 />
               </Grid.Column>
@@ -143,7 +143,7 @@ const Article1 = ({ isLoading }) => {
                   headerArticle={articles[0].titre}
                   contenuArticle={articles[0].contenu}
                 />
-                <Image src="./images/barre-2-HP.jpg" />
+                <Image src="../images/barre-2-HP.jpg" />
                 <span
                   className="article animate__animated"
                   onClick={toggleFlash}
@@ -160,7 +160,7 @@ const Article1 = ({ isLoading }) => {
                 />
                 <Image
                   style={{ marginTop: "10px" }}
-                  src="./images/barre-HP.jpg"
+                  src="../images/barre-HP.jpg"
                 />
                 <p className="article animate__animated" onClick={toggleShakeY}>
                   {" "}
@@ -184,16 +184,18 @@ const Article1 = ({ isLoading }) => {
                 <div className="titre2 mini-titre">
                   Grands Lieux inquiétants ?
                 </div>
-                <ModalArticle
-                  texteArticle={texte[4]}
-                  headerArticle={articles[2].titre}
-                  contenuArticle={articles[2].contenu}
-                />
+                <div id="modal-article" >
+                  <ModalArticle
+                    texteArticle={texte[4]}
+                    headerArticle={articles[2].titre}
+                    contenuArticle={articles[2].contenu}
+                  />
+                </div>
               </Grid.Column>
               <Grid.Column width={8}>
-                <ModalImage srcImage="./images/zh-nb.png" />
+                <ModalImage srcImage="../images/zh-nb.png" />
                 <Image
-                  src="./images/barre-3-HP.jpg"
+                  src="../images/barre-3-HP.jpg"
                   style={{ width: "100%", marginTop: "3px" }}
                 />
                 {/* <video width="320" height="240" autoPlay> */}
@@ -248,7 +250,7 @@ const Article1 = ({ isLoading }) => {
                   <Grid.Column width={5}>
                     <Image
                       style={{ marginTop: "10px" }}
-                      src="./images/barre-2-HP.jpg"
+                      src="../images/barre-2-HP.jpg"
                     />
                     <div className="titre-lettre">t</div>
                   </Grid.Column>
@@ -268,7 +270,7 @@ const Article1 = ({ isLoading }) => {
                   </Grid.Column>
                 </Grid>
                 <Image
-                  src="./images/barre-3-HP.jpg"
+                  src="../images/barre-3-HP.jpg"
                   style={{
                     width: "100%",
                     marginTop: "3px",
@@ -281,7 +283,7 @@ const Article1 = ({ isLoading }) => {
               <Grid.Column width={1}>
                 <h1 className="titre2">
                   <Image
-                    src="./images/main-droite.jpg"
+                    src="../images/main-droite.jpg"
                     style={{
                       display: "inline",
                       transform: "rotate(90deg)",
@@ -316,7 +318,7 @@ const Article1 = ({ isLoading }) => {
                   irure dolor in reprehenderit in voluptate velit esse cillum
                   dolore eu fugiat nulla pariatur.
                 </p>
-                <ModalImage srcImage="./images/zh-hum.jpg" />
+                <ModalImage srcImage="../images/zh-hum.jpg" />
                 <ModalArticle
                   texteArticle={texte[3]}
                   headerArticle={articles[3].titre}
@@ -331,7 +333,7 @@ const Article1 = ({ isLoading }) => {
                   dolore eu fugiat nulla pariatur.
                 </p>
                 <Image
-                  src="./images/barre-3-HP.jpg"
+                  src="../images/barre-3-HP.jpg"
                   style={{ width: "100%", marginTop: "3px" }}
                 />
                 <h3 className="titre2">{articles[4].titre}</h3>

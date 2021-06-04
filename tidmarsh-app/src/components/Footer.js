@@ -12,7 +12,7 @@ class Footer extends Component {
                         </Grid.Column>
                         <Grid.Column  textAlign="center">
                             <Header>Harry Potter Daily Data'Venir</Header>
-                            <Image src="./images/logo-petit.svg" style={{ width: 100, margin: "auto", opacity: 0.4 }} />
+                            <Image src="../images/logo-petit.svg" style={{ width: 100, margin: "auto", opacity: 0.4 }} />
                         </Grid.Column>
                         <Grid.Column>
                             <Header textAlign="center">Liens rapides</Header>
