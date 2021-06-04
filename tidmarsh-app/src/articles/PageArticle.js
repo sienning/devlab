@@ -22,7 +22,7 @@ const PageArticle = ({ children }) => {
       ) : (
         <div>
           <h1 className="titre5">
-            <Image src="./images/logo.svg" fluid />
+            <Image src="../images/logo.svg" fluid />
           </h1>
           <HeaderDaily
             temperature={temperature}

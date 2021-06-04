@@ -82,7 +82,7 @@ const Article1 = ({ isLoading }) => {
         <div>
           <img
             id="heron-img"
-            src="./images/heron.svg"
+            src="../images/heron.svg"
             className="heron-img"
             alt="heron"
           />
