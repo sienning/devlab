@@ -23,11 +23,15 @@ const HeaderDaily = ({ temperature, humidity, pressure }) => {
           {/* METEO */}
           <span className="titre3 mini-titre">Météo du jour</span>
           <br />
-          <span className="titre2 mini-titre">
-            Aujourd'hui : {temperature?.value}
-            {temperature?.unit}{" "}
-          </span>
           <Icon loading name="sun" />
+          <span className="titre2 mini-titre">
+            {temperature?.value} {temperature?.unit}{" "}
+          </span>
+          <br />
+          <Icon loading name="long arrow alternate down" />
+          <span className="titre2 mini-titre">
+            {pressure?.value} {pressure?.unit}{" "}
+          </span>
         </Grid.Column>
 
         <Grid.Column width={8}>

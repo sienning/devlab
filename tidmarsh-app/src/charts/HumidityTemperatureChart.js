@@ -3,12 +3,14 @@ import { Chart } from "react-charts";
 import { useHumidityData, useTemperatureData } from "./charts.service";
 import Chargement from "../components/Chargement";
 
-const HumidityTemperatureChart = () => {
-  const { data: humidity, isLoading: isLoadingHumidity } = useHumidityData();
-  const {
-    data: temperature,
-    isLoading: isLoadingTemperature,
-  } = useTemperatureData();
+const HumidityTemperatureChart = ({
+  humiditySensorId,
+  temperatureSensorId,
+}) => {
+  const { data: humidity, isLoading: isLoadingHumidity } =
+    useHumidityData(humiditySensorId);
+  const { data: temperature, isLoading: isLoadingTemperature } =
+    useTemperatureData(temperatureSensorId);
   const isLoading = isLoadingHumidity || isLoadingTemperature;
 
   const data = React.useMemo(

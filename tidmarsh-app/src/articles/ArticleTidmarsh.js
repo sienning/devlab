@@ -7,8 +7,11 @@ import Chart from "../charts/HumidityTemperatureChart";
 import Histo from "../charts/WhiteLightChart";
 import ModalImage from "../components/ModalImage";
 import ModalHeron from "../components/ModalHeron";
+import HeaderDaily from "../components/HeaderDaily";
+import { findSensor } from "./articles.service";
+import { useDevice, useSensor } from "../hooks/api";
 
-const Article1 = ({ isLoading }) => {
+const ArticleTidmarsh = ({ deviceId = 25941 }) => {
   const texte = articlesJSON.fakeArticles;
   const articles = articlesJSON.articles;
   const [open, setOpen] = useState(false);
@@ -49,7 +52,6 @@ const Article1 = ({ isLoading }) => {
 
   // -------------------------------------
   const toggleHeron = () => {
-    console.log("toggle heron");
     let idHeron = document.getElementById("heron-img");
     let leftPos = 0;
     let bottomPos = -900;
@@ -64,7 +66,6 @@ const Article1 = ({ isLoading }) => {
         idHeron.style.left = leftPos + "px";
         idHeron.style.bottom = bottomPos + "px";
       } else {
-        console.log("clear");
         clearInterval(interval);
         setOpen(true);
         idHeron.style.left = 0 + "px";
@@ -74,12 +75,50 @@ const Article1 = ({ isLoading }) => {
     }, 0.0001);
   };
 
+  const { getSensors } = useDevice(deviceId);
+  const sensors = getSensors({ enabled: !!deviceId });
+
+  const temperatureSensor = findSensor(sensors, "temperature");
+
+  const { data: temperature, isLoading: isLoadingTemperature } = useSensor(
+    temperatureSensor?.id,
+    {
+      enabled: !!temperatureSensor,
+    }
+  );
+
+  const humiditySensor = findSensor(sensors, "humidity");
+  const { data: humidity, isLoading: isLoadingHumidity } = useSensor(
+    humiditySensor?.id,
+    {
+      enabled: !!humiditySensor,
+    }
+  );
+
+  const pressureSensor = findSensor(sensors, "pressure");
+  const { data: pressure, isLoading: isLoadingPressure } = useSensor(
+    pressureSensor?.id,
+    {
+      enabled: !!pressureSensor,
+    }
+  );
+
+  const isLoading =
+    isLoadingTemperature | isLoadingHumidity | isLoadingPressure;
+
+  const whiteLightSensor = findSensor(sensors, "light_white");
+
   return (
     <div>
       {isLoading ? (
         <Chargement />
       ) : (
         <div>
+          <HeaderDaily
+            temperature={temperature}
+            humidity={humidity}
+            pressure={pressure}
+          />
           <img
             id="heron-img"
             src="../images/heron.svg"
@@ -275,8 +314,15 @@ const Article1 = ({ isLoading }) => {
                     marginBottom: "6px",
                   }}
                 />
-                <Chart />
-                <Histo />
+                {humiditySensor && temperatureSensor && (
+                  <Chart
+                    humiditySensorId={humiditySensor?.id}
+                    temperatureSensorId={temperatureSensor?.id}
+                  />
+                )}
+                {whiteLightSensor && (
+                  <Histo whiteLightSensorId={whiteLightSensor?.id} />
+                )}
               </Grid.Column>
               <Grid.Column width={1}>
                 <h1 className="titre2">
@@ -352,4 +398,4 @@ const Article1 = ({ isLoading }) => {
   );
 };
 
-export default Article1;
+export default ArticleTidmarsh;
