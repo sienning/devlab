@@ -1,9 +1,10 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import { useQuery } from "react-query";
+import { baseURL } from "../utils/api";
 
 const API_AGGREGATE_DATA_URL = (sensor_id) =>
-  `/aggregate_data/?sensor_id=${sensor_id}&aggtime=1h`;
+  `${baseURL}/aggregate_data/?sensor_id=${sensor_id}&aggtime=1h`;
 
 const getLastDayData = (datas) => {
   const yesterday = dayjs().subtract(1, "day").format("YYYY-MM-DD").toString();

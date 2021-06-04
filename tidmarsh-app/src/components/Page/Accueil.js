@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Grid, Header, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { TIDMARSH_UPDATES_DEVICES } from "../../utils/api";
 class Accueil extends Component {
   componentDidMount() {}
   render() {
@@ -59,6 +60,34 @@ class Accueil extends Component {
 
           <div className="corps">
             <Header className="articles-header">
+              Les articles Tidmarsh...
+            </Header>
+            <div>
+              <Grid
+                style={{ marginBottom: 20 }}
+                stackable
+                textAlign="center"
+                columns={3}
+              >
+                {TIDMARSH_UPDATES_DEVICES.map((device) => (
+                  <Grid.Column>
+                    <Header>{device?.title}</Header>
+                    <Header.Subheader>Date</Header.Subheader>
+                    <Link to={`/article/tidmarsh?deviceId=${device.id}`}>
+                      <Image
+                        className="article-img"
+                        href="/article/tidmarsh"
+                        src="./images/articles/article-1.png"
+                      />
+                    </Link>{" "}
+                  </Grid.Column>
+                ))}
+              </Grid>
+              <Link className="voir-plus" to="/kiosque">
+                Voir plus
+              </Link>
+            </div>
+            <Header className="articles-header">
               Les derniers articles ...
             </Header>
             <div>
@@ -71,10 +100,10 @@ class Accueil extends Component {
                 <Grid.Column>
                   <Header>Titre</Header>
                   <Header.Subheader>Date</Header.Subheader>
-                  <Link to="/article/1">
+                  <Link to="/article/tidmarsh">
                     <Image
                       className="article-img"
-                      href="/article/1"
+                      href="/article/tidmarsh"
                       src="./images/articles/article-1.png"
                     />
                   </Link>{" "}
@@ -82,10 +111,10 @@ class Accueil extends Component {
                 <Grid.Column>
                   <Header>Titre</Header>
                   <Header.Subheader>Date</Header.Subheader>
-                  <Link to="/article/1">
+                  <Link to="/article/tidmarsh">
                     <Image
                       className="article-img"
-                      href="/article/1"
+                      href="/article/tidmarsh"
                       src="./images/articles/article-1.png"
                     />
                   </Link>{" "}
@@ -93,10 +122,10 @@ class Accueil extends Component {
                 <Grid.Column>
                   <Header>Titre</Header>
                   <Header.Subheader>Date</Header.Subheader>
-                  <Link to="/article/1">
+                  <Link to="/article/tidmarsh">
                     <Image
                       className="article-img"
-                      href="/article/1"
+                      href="/article/tidmarsh"
                       src="./images/articles/article-1.png"
                     />
                   </Link>
