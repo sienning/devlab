@@ -9,12 +9,10 @@ import { Image } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "react-query";
-import axios from "axios";
 import ArticleTidmarsh from "./articles/ArticleTidmarsh";
 import PageArticle from "./articles/PageArticle";
 const queryClient = new QueryClient();
 
-axios.defaults.baseURL = "https://chain-api.media.mit.edu";
 function App() {
   return (
     <div className="App">
@@ -49,7 +47,7 @@ function App() {
               <Route path="/kiosque">
                 <Kiosque />
               </Route>
-              <Route path="/article/1">
+              <Route path="/article/tidmarsh">
                 <QueryClientProvider client={queryClient}>
                   <PageArticle>
                     <ArticleTidmarsh />

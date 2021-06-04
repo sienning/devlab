@@ -9,9 +9,13 @@ import ModalImage from "../components/ModalImage";
 import ModalHeron from "../components/ModalHeron";
 import HeaderDaily from "../components/HeaderDaily";
 import { findSensor } from "./articles.service";
-import { useDevice, useSensor } from "../hooks/api";
+import { useDevice, useSensor } from "../utils/api";
+import { useLocation } from "react-router";
 
-const ArticleTidmarsh = ({ deviceId = 25941 }) => {
+const ArticleTidmarsh = () => {
+  const location = useLocation();
+  const deviceId =
+    +location?.search.replace("?", "").split("deviceId=")[1] || 25941;
   const texte = articlesJSON.fakeArticles;
   const articles = articlesJSON.articles;
   const [open, setOpen] = useState(false);

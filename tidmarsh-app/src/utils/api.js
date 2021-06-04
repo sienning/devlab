@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
-const baseURL = "https://chain-api.media.mit.edu";
+export const baseURL = "https://chain-api.media.mit.edu";
 
-export const TIDMARSH_UPDATES_DEVICES = ["0x82FF", "0x8223"];
+export const TIDMARSH_UPDATES_DEVICES = [
+  { title: "0x8223", id: 25941 },
+  { title: "0x82FF", id: 25946 },
+];
 
 export const API_SITES_URL = `${baseURL}/sites`;
 export const API_SITE_DEVICES_URL = (siteID) =>
