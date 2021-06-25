@@ -89,7 +89,7 @@ export const useDevice = (deviceId, config = {}) => {
 export const API_SENSOR_URL = (sensorId) =>
   `${baseURL}/scalar_sensors/${sensorId}`;
 
-export const useSensor = (sensorId, config = {}) => {
+export const useScalarSensor = (sensorId, config = {}) => {
   return useQuery(
     ["sensor", sensorId],
     () =>
