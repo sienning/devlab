@@ -9,8 +9,9 @@ import ModalImage from "../components/ModalImage";
 import ModalHeron from "../components/ModalHeron";
 import HeaderDaily from "../components/HeaderDaily";
 import { findSensor } from "./articles.service";
-import { useDevice, useSensor } from "../utils/api";
+import { useDevice, useScalarSensor } from "../utils/api";
 import { useLocation } from "react-router";
+import dayjs from "dayjs";
 
 const ArticleTidmarsh = () => {
   const location = useLocation();
@@ -84,15 +85,13 @@ const ArticleTidmarsh = () => {
 
   const temperatureSensor = findSensor(sensors, "temperature");
 
-  const { data: temperature, isLoading: isLoadingTemperature } = useSensor(
-    temperatureSensor?.id,
-    {
+  const { data: temperature, isLoading: isLoadingTemperature } =
+    useScalarSensor(temperatureSensor?.id, {
       enabled: !!temperatureSensor,
-    }
-  );
+    });
 
   const humiditySensor = findSensor(sensors, "humidity");
-  const { data: humidity, isLoading: isLoadingHumidity } = useSensor(
+  const { data: humidity, isLoading: isLoadingHumidity } = useScalarSensor(
     humiditySensor?.id,
     {
       enabled: !!humiditySensor,
@@ -100,7 +99,7 @@ const ArticleTidmarsh = () => {
   );
 
   const pressureSensor = findSensor(sensors, "pressure");
-  const { data: pressure, isLoading: isLoadingPressure } = useSensor(
+  const { data: pressure, isLoading: isLoadingPressure } = useScalarSensor(
     pressureSensor?.id,
     {
       enabled: !!pressureSensor,
@@ -322,10 +321,16 @@ const ArticleTidmarsh = () => {
                   <Chart
                     humiditySensorId={humiditySensor?.id}
                     temperatureSensorId={temperatureSensor?.id}
+                    from={dayjs().subtract(1, "day").subtract(1, "year")}
+                    to={dayjs().subtract(1, "year")}
                   />
                 )}
                 {whiteLightSensor && (
-                  <Histo whiteLightSensorId={whiteLightSensor?.id} />
+                  <Histo
+                    whiteLightSensorId={whiteLightSensor?.id}
+                    from={dayjs().subtract(1, "day").subtract(1, "year")}
+                    to={dayjs().subtract(1, "year")}
+                  />
                 )}
               </Grid.Column>
               <Grid.Column width={1}>
