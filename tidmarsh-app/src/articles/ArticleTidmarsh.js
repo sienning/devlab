@@ -7,8 +7,19 @@ import Chart from "../charts/HumidityTemperatureChart";
 import Histo from "../charts/WhiteLightChart";
 import ModalImage from "../components/ModalImage";
 import ModalHeron from "../components/ModalHeron";
+import HeaderDaily from "../components/HeaderDaily";
+import { findSensor } from "./articles.service";
+import { useDevice } from "../utils/api";
+import { useLocation } from "react-router";
+import dayjs from "dayjs";
+import { getMidnightTimestamp, useSensorData } from "../charts/charts.service";
 
-const Article1 = ({ isLoading }) => {
+const ArticleTidmarsh = () => {
+  const location = useLocation();
+  const deviceId =
+    +location?.search.split("deviceId=")[1].split("&")[0] || 25941;
+  const date =
+    dayjs(location?.search.split("date=")[1], "YYYY-MM-DD") || dayjs();
   const texte = articlesJSON.fakeArticles;
   const articles = articlesJSON.articles;
   const [open, setOpen] = useState(false);
@@ -49,7 +60,6 @@ const Article1 = ({ isLoading }) => {
 
   // -------------------------------------
   const toggleHeron = () => {
-    console.log("toggle heron");
     let idHeron = document.getElementById("heron-img");
     let leftPos = 0;
     let bottomPos = -900;
@@ -64,7 +74,6 @@ const Article1 = ({ isLoading }) => {
         idHeron.style.left = leftPos + "px";
         idHeron.style.bottom = bottomPos + "px";
       } else {
-        console.log("clear");
         clearInterval(interval);
         setOpen(true);
         idHeron.style.left = 0 + "px";
@@ -74,12 +83,75 @@ const Article1 = ({ isLoading }) => {
     }, 0.0001);
   };
 
+  // DATAS
+
+  const getAverageData = (array) =>
+    array?.data
+      ?.reduce((avg, value, _, { length }) => {
+        return avg + value?.y / length;
+      }, 0)
+      .toFixed(2);
+
+  const from = date.subtract(1, "day").subtract(1, "year");
+  const to = date.subtract(1, "year");
+
+  const { getSensors } = useDevice(deviceId);
+  const sensors = getSensors({ enabled: !!deviceId });
+
+  const temperatureSensor = findSensor(sensors, "temperature");
+
+  const { data: temperatures, isLoading: isLoadingTemperature } = useSensorData(
+    temperatureSensor?.id,
+    {
+      timestamp__gte: getMidnightTimestamp(from),
+      timestamp__lt: getMidnightTimestamp(to),
+    },
+    { enabled: !!temperatureSensor }
+  );
+  const averageTemperature = getAverageData(temperatures);
+
+  const humiditySensor = findSensor(sensors, "humidity");
+  const { data: humidities, isLoading: isLoadingHumidity } = useSensorData(
+    humiditySensor?.id,
+    {
+      timestamp__gte: getMidnightTimestamp(from),
+      timestamp__lt: getMidnightTimestamp(to),
+    },
+    {
+      enabled: !!humiditySensor,
+    }
+  );
+  const averageHumidity = getAverageData(humidities);
+
+  const pressureSensor = findSensor(sensors, "pressure");
+  const { data: pressures, isLoading: isLoadingPressure } = useSensorData(
+    pressureSensor?.id,
+    {
+      timestamp__gte: getMidnightTimestamp(from),
+      timestamp__lt: getMidnightTimestamp(to),
+    },
+    {
+      enabled: !!pressureSensor,
+    }
+  );
+  const averagePressure = getAverageData(pressures);
+
+  const isLoading =
+    isLoadingTemperature | isLoadingHumidity | isLoadingPressure;
+
+  const whiteLightSensor = findSensor(sensors, "light_white");
+
   return (
     <div>
       {isLoading ? (
         <Chargement />
       ) : (
         <div>
+          <HeaderDaily
+            temperature={{ value: averageTemperature, unit: "°C" }}
+            humidity={{ value: averageHumidity, unit: "%" }}
+            pressure={{ value: averagePressure, unit: "hPa" }}
+          />
           <img
             id="heron-img"
             src="../images/heron.svg"
@@ -275,8 +347,21 @@ const Article1 = ({ isLoading }) => {
                     marginBottom: "6px",
                   }}
                 />
-                <Chart />
-                <Histo />
+                {humiditySensor && temperatureSensor && (
+                  <Chart
+                    humiditySensorId={humiditySensor?.id}
+                    temperatureSensorId={temperatureSensor?.id}
+                    from={from}
+                    to={to}
+                  />
+                )}
+                {whiteLightSensor && (
+                  <Histo
+                    whiteLightSensorId={whiteLightSensor?.id}
+                    from={from}
+                    to={to}
+                  />
+                )}
               </Grid.Column>
               <Grid.Column width={1}>
                 <h1 className="titre2">
@@ -341,7 +426,9 @@ const Article1 = ({ isLoading }) => {
                   contenuArticle={articles[4].contenu}
                 />
                 {texte[5]}
-                <h1 className="titre2">23/10/2020</h1>
+                <h1 className="titre2">
+                  {dayjs(date, "YYYY-MM-DD")?.format("DD/MM/YYYY")}
+                </h1>
               </Grid.Column>
             </Grid>
             {/* <h1 className="titre2">GROS TITRE EXEMPLE 3</h1> */}
@@ -352,4 +439,4 @@ const Article1 = ({ isLoading }) => {
   );
 };
 
-export default Article1;
+export default ArticleTidmarsh;

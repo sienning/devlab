@@ -1,14 +1,28 @@
 import React from "react";
 import { Chart } from "react-charts";
-import { useHumidityData, useTemperatureData } from "./charts.service";
+import { getMidnightTimestamp, useSensorData } from "./charts.service";
 import Chargement from "../components/Chargement";
 
-const HumidityTemperatureChart = () => {
-  const { data: humidity, isLoading: isLoadingHumidity } = useHumidityData();
-  const {
-    data: temperature,
-    isLoading: isLoadingTemperature,
-  } = useTemperatureData();
+const HumidityTemperatureChart = ({
+  humiditySensorId,
+  temperatureSensorId,
+  from,
+  to,
+}) => {
+  const { data: humidity, isLoading: isLoadingHumidity } = useSensorData(
+    humiditySensorId,
+    {
+      timestamp__gte: getMidnightTimestamp(from),
+      timestamp__lt: getMidnightTimestamp(to),
+    }
+  );
+  const { data: temperature, isLoading: isLoadingTemperature } = useSensorData(
+    temperatureSensorId,
+    {
+      timestamp__gte: getMidnightTimestamp(from),
+      timestamp__lt: getMidnightTimestamp(to),
+    }
+  );
   const isLoading = isLoadingHumidity || isLoadingTemperature;
 
   const data = React.useMemo(

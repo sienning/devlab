@@ -1,69 +1,36 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import { useQuery } from "react-query";
+import { baseURL } from "../utils/api";
 
-const WHITE_LIGHT_ENDPOINT = "/aggregate_data/?sensor_id=9913&aggtime=1h";
-const HUMIDITY_ENDPOINT = "/aggregate_data/?sensor_id=9909&aggtime=1h";
-const TEMPERATURE_ENDPOINT = "/aggregate_data/?sensor_id=9908&aggtime=1h";
+export const getMidnightTimestamp = (day) =>
+  dayjs(day.format("YYYY-MM-DD")).unix();
 
-const getLastDayData = (datas) => {
-  const yesterday = dayjs().subtract(1, "day").format("YYYY-MM-DD").toString();
-  const result = [];
-  for (let i = 0; i < 24; ++i) {
-    const toFound =
-      yesterday +
-      "T" +
-      (i.toString().length === 1 ? "0" + i.toString() : i.toString());
-    result.push({
-      x: i,
-      y: datas.find((data) => data.timestamp.includes(toFound)).mean,
-    });
-  }
-  return result;
+const API_AGGREGATE_DATA_URL = (sensor_id, from, to) =>
+  `${baseURL}/aggregate_data/?sensor_id=${sensor_id}&aggtime=1h${
+    from ? `&timestamp__gte=${from}` : ""
+  }${to ? `&timestamp__lt=${to}` : ""}`;
+
+const formatDataViz = (data) => {
+  return data.map((value, index) => ({ x: index, y: value?.mean }));
 };
 
-export const useWhiteLightData = (config = {}) => {
+export const useSensorData = (sensorId, params = {}, config = {}) => {
   return useQuery(
-    ["whiteLight"],
+    ["whiteLight", sensorId, params],
     () =>
-      axios.get(`${WHITE_LIGHT_ENDPOINT}`).then((response) => {
-        return {
+      axios
+        .get(
+          API_AGGREGATE_DATA_URL(
+            sensorId,
+            params?.timestamp__gte,
+            params?.timestamp__lt
+          )
+        )
+        .then((response) => ({
           ...response?.data,
-          data: getLastDayData(response?.data?.data),
-        };
-      }),
-    {
-      ...config,
-    }
-  );
-};
-
-export const useHumidityData = (config = {}) => {
-  return useQuery(
-    ["humidity"],
-    () =>
-      axios.get(`${HUMIDITY_ENDPOINT}`).then((response) => {
-        return {
-          ...response?.data,
-          data: getLastDayData(response?.data?.data),
-        };
-      }),
-    {
-      ...config,
-    }
-  );
-};
-
-export const useTemperatureData = (config = {}) => {
-  return useQuery(
-    ["temperature"],
-    () =>
-      axios.get(`${TEMPERATURE_ENDPOINT}`).then((response) => {
-        return {
-          ...response?.data,
-          data: getLastDayData(response?.data?.data),
-        };
-      }),
+          data: formatDataViz(response?.data?.data),
+        })),
     {
       ...config,
     }
