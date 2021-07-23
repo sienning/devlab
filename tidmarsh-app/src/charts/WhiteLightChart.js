@@ -1,10 +1,13 @@
 import React from "react";
 import { Chart } from "react-charts";
-import { useWhiteLightData } from "../charts/charts.service";
+import { getMidnightTimestamp, useSensorData } from "../charts/charts.service";
 import Chargement from "../components/Chargement";
 
-const WhiteLightChart = () => {
-  const { data: whiteLight, isLoading } = useWhiteLightData();
+const WhiteLightChart = ({ whiteLightSensorId, from, to }) => {
+  const { data: whiteLight, isLoading } = useSensorData(whiteLightSensorId, {
+    timestamp__gte: getMidnightTimestamp(from),
+    timestamp__lt: getMidnightTimestamp(to),
+  });
 
   const data = React.useMemo(
     () => [

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Container, Grid, Header, Image } from 'semantic-ui-react';
-import Chargement from '../Chargement';
+import React, { Component } from "react";
+import { Container, Grid, Header, Image } from "semantic-ui-react";
 
 class APropos extends Component {
     render() {
