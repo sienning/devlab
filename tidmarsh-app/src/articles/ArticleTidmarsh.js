@@ -9,9 +9,10 @@ import ModalImage from "../components/ModalImage";
 import ModalHeron from "../components/ModalHeron";
 import HeaderDaily from "../components/HeaderDaily";
 import { findSensor } from "./articles.service";
-import { useDevice, useScalarSensor } from "../utils/api";
+import { useDevice } from "../utils/api";
 import { useLocation } from "react-router";
 import dayjs from "dayjs";
+import { getMidnightTimestamp, useSensorData } from "../charts/charts.service";
 
 const ArticleTidmarsh = () => {
   const location = useLocation();
@@ -82,31 +83,58 @@ const ArticleTidmarsh = () => {
     }, 0.0001);
   };
 
+  // DATAS
+
+  const getAverageData = (array) =>
+    array?.data
+      ?.reduce((avg, value, _, { length }) => {
+        return avg + value?.y / length;
+      }, 0)
+      .toFixed(2);
+
+  const from = date.subtract(1, "day").subtract(1, "year");
+  const to = date.subtract(1, "year");
+
   const { getSensors } = useDevice(deviceId);
   const sensors = getSensors({ enabled: !!deviceId });
 
   const temperatureSensor = findSensor(sensors, "temperature");
 
-  const { data: temperature, isLoading: isLoadingTemperature } =
-    useScalarSensor(temperatureSensor?.id, {
-      enabled: !!temperatureSensor,
-    });
+  const { data: temperatures, isLoading: isLoadingTemperature } = useSensorData(
+    temperatureSensor?.id,
+    {
+      timestamp__gte: getMidnightTimestamp(from),
+      timestamp__lt: getMidnightTimestamp(to),
+    },
+    { enabled: !!temperatureSensor }
+  );
+  const averageTemperature = getAverageData(temperatures);
 
   const humiditySensor = findSensor(sensors, "humidity");
-  const { data: humidity, isLoading: isLoadingHumidity } = useScalarSensor(
+  const { data: humidities, isLoading: isLoadingHumidity } = useSensorData(
     humiditySensor?.id,
+    {
+      timestamp__gte: getMidnightTimestamp(from),
+      timestamp__lt: getMidnightTimestamp(to),
+    },
     {
       enabled: !!humiditySensor,
     }
   );
+  const averageHumidity = getAverageData(humidities);
 
   const pressureSensor = findSensor(sensors, "pressure");
-  const { data: pressure, isLoading: isLoadingPressure } = useScalarSensor(
+  const { data: pressures, isLoading: isLoadingPressure } = useSensorData(
     pressureSensor?.id,
+    {
+      timestamp__gte: getMidnightTimestamp(from),
+      timestamp__lt: getMidnightTimestamp(to),
+    },
     {
       enabled: !!pressureSensor,
     }
   );
+  const averagePressure = getAverageData(pressures);
 
   const isLoading =
     isLoadingTemperature | isLoadingHumidity | isLoadingPressure;
@@ -120,9 +148,9 @@ const ArticleTidmarsh = () => {
       ) : (
         <div>
           <HeaderDaily
-            temperature={temperature}
-            humidity={humidity}
-            pressure={pressure}
+            temperature={{ value: averageTemperature, unit: "°C" }}
+            humidity={{ value: averageHumidity, unit: "%" }}
+            pressure={{ value: averagePressure, unit: "hPa" }}
           />
           <img
             id="heron-img"
@@ -323,15 +351,15 @@ const ArticleTidmarsh = () => {
                   <Chart
                     humiditySensorId={humiditySensor?.id}
                     temperatureSensorId={temperatureSensor?.id}
-                    from={date.subtract(1, "day").subtract(1, "year")}
-                    to={date.subtract(1, "year")}
+                    from={from}
+                    to={to}
                   />
                 )}
                 {whiteLightSensor && (
                   <Histo
                     whiteLightSensorId={whiteLightSensor?.id}
-                    from={date.subtract(1, "day").subtract(1, "year")}
-                    to={date.subtract(1, "year")}
+                    from={from}
+                    to={to}
                   />
                 )}
               </Grid.Column>

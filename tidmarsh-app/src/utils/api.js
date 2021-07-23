@@ -6,6 +6,7 @@ export const baseURL = "https://chain-api.media.mit.edu";
 export const TIDMARSH_UPDATES_DEVICES = [
   { title: "0x8223", id: 25941 },
   { title: "0x82FF", id: 25946 },
+  { title: "0x0042", id: 25521 }, // fake title (no name in api)
 ];
 
 export const API_SITES_URL = `${baseURL}/sites`;
