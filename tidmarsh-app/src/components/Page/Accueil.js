@@ -1,128 +1,110 @@
-import React, { Component } from "react";
-import { Container, Grid, Header, Image } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Container, Grid, Header, Image, Select } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { TIDMARSH_UPDATES_DEVICES } from "../../utils/api";
-class Accueil extends Component {
-  componentDidMount() {}
-  render() {
-    return (
-      <div>
-        <Container className="accueil">
-          <div id="header-title">
-            <Image src="./images/logo.svg" fluid />
-          </div>
-          <span style={{ textAlign: "center" }}>
-            <Header
-              style={{
-                height: "auto",
-                paddingTop: "20px",
-                fontFamily:
-                  "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
-              }}
-            >
-              Bienvenu sur le site du Daily Data'Venir !
-            </Header>
-            <p
-              style={{
-                height: "auto",
-                fontFamily: "'Londrina Solid', cursive",
-              }}
-            >
-              Les Zones Humides sont un sujet à prendre très au sérieux, alors
-              pourquoi ne pas en apprendre un peu plus avec ce journal ?
-            </p>
-            <p
-              style={{
-                height: "auto",
-                fontFamily: "'Grenze Gotisch', cursive",
-              }}
-            >
-              Découvrez le monde des Zones Humides avec l'univers d'Harry Potter
-              ! Inspiré du Daily Prophet, le fameux journal mouvant des
-              sorciers, le <b>Daily Data'Venir</b> nous explique l'impact de ces
-              Zones Humides sur l'environnement, en nous partageant des données
-              de sa faune et de sa flore.
-            </p>
-          </span>
-          <div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            Tuto rapide
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
+import dayjs from "dayjs";
+require("dayjs/locale/fr");
 
-          <div className="corps">
-            <Header className="articles-header">
-              Les articles Tidmarsh...
+const Accueil = () => {
+  const [deviceId, setDeviceId] = useState(TIDMARSH_UPDATES_DEVICES[0]?.id);
+
+  const getSevenLastDays = () => {
+    const today = dayjs();
+    return [...Array(7)].map((_, index) => today.subtract(index + 1, "day"));
+  };
+
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  const sevenLastDays = getSevenLastDays();
+  return (
+    <div>
+      <Container className="accueil">
+        <div id="header-title">
+          <Image src="./images/logo.svg" fluid />
+        </div>
+        <span style={{ textAlign: "center" }}>
+          <Header
+            style={{
+              height: "auto",
+              paddingTop: "20px",
+              fontFamily:
+                "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
+            }}
+          >
+            Bienvenu sur le site du Daily Data'Venir !
+          </Header>
+          <p
+            style={{
+              height: "auto",
+              fontFamily: "'Londrina Solid', cursive",
+            }}
+          >
+            Les Zones Humides sont un sujet à prendre très au sérieux, alors
+            pourquoi ne pas en apprendre un peu plus avec ce journal ?
+          </p>
+          <p
+            style={{
+              height: "auto",
+              fontFamily: "'Grenze Gotisch', cursive",
+            }}
+          >
+            Découvrez le monde des Zones Humides avec l'univers d'Harry Potter !
+            Inspiré du Daily Prophet, le fameux journal mouvant des sorciers, le{" "}
+            <b>Daily Data'Venir</b> nous explique l'impact de ces Zones Humides
+            sur l'environnement, en nous partageant des données de sa faune et
+            de sa flore.
+          </p>
+        </span>
+        <div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          Tuto rapide
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
+
+        <div className="corps" style={{ paddingBottom: 20 }}>
+          <Header className="articles-header">Tidmarsh</Header>
+          <div>
+            <Header as="h4" className="ui label">
+              Capteur
             </Header>
-            <div>
-              <Grid
-                style={{ marginBottom: 20 }}
-                stackable
-                textAlign="center"
-                columns={3}
-              >
-                {TIDMARSH_UPDATES_DEVICES.map((device) => (
-                  <Grid.Column>
-                    <Header>{device?.title}</Header>
-                    <Header.Subheader>Date</Header.Subheader>
-                    <Link to={`/article/tidmarsh?deviceId=${device.id}`}>
-                      <Image
-                        className="article-img"
-                        href="/article/tidmarsh"
-                        src="./images/articles/article-1.png"
-                      />
-                    </Link>{" "}
-                  </Grid.Column>
-                ))}
-              </Grid>
-              <Link className="voir-plus" to="/kiosque">
-                Voir plus
-              </Link>
-            </div>
-            <Header className="articles-header">
-              Les derniers articles ...
-            </Header>
-            <div>
-              <Grid
-                style={{ marginBottom: 20 }}
-                stackable
-                textAlign="center"
-                columns={3}
-              >
-                <Grid.Column>
-                  <Header>Titre</Header>
-                  <Header.Subheader>Date</Header.Subheader>
-                  <Link to="/article/tidmarsh">
-                    <Image
-                      className="article-img"
-                      href="/article/tidmarsh"
-                      src="./images/articles/article-1.png"
-                    />
-                  </Link>{" "}
-                </Grid.Column>
-                <Grid.Column>
-                  <Header>Titre</Header>
-                  <Header.Subheader>Date</Header.Subheader>
-                  <Link to="/article/tidmarsh">
-                    <Image
-                      className="article-img"
-                      href="/article/tidmarsh"
-                      src="./images/articles/article-1.png"
-                    />
-                  </Link>{" "}
-                </Grid.Column>
-                <Grid.Column>
-                  <Header>Titre</Header>
-                  <Header.Subheader>Date</Header.Subheader>
-                  <Link to="/article/tidmarsh">
+            <Select
+              value={deviceId}
+              onChange={(_, component) => setDeviceId(component?.value)}
+              options={TIDMARSH_UPDATES_DEVICES?.map((device) => ({
+                text: device?.title,
+                value: device?.id,
+              }))}
+            />
+          </div>
+          <div>
+            <Grid
+              style={{ marginBottom: 20 }}
+              stackable
+              textAlign="center"
+              columns={3}
+            >
+              {sevenLastDays.map((day) => (
+                <Grid.Column style={{ marginBottom: 20 }}>
+                  <Header>
+                    {capitalizeFirstLetter(
+                      day?.locale("fr")?.format("dddd D MMMM YYYY")
+                    )}
+                  </Header>
+                  <Link
+                    to={`/article/tidmarsh?deviceId=${deviceId}&date=${day?.format(
+                      "YYYY-MM-DD"
+                    )}`}
+                  >
                     <Image
                       className="article-img"
                       href="/article/tidmarsh"
@@ -130,16 +112,16 @@ class Accueil extends Component {
                     />
                   </Link>
                 </Grid.Column>
-              </Grid>
-              <Link className="voir-plus" to="/kiosque">
-                Voir plus
-              </Link>
-            </div>
+              ))}
+            </Grid>
+            <Link className="voir-plus" to="/kiosque">
+              Voir plus
+            </Link>
           </div>
-        </Container>
-      </div>
-    );
-  }
-}
+        </div>
+      </Container>
+    </div>
+  );
+};
 
 export default Accueil;

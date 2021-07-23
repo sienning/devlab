@@ -16,7 +16,9 @@ import dayjs from "dayjs";
 const ArticleTidmarsh = () => {
   const location = useLocation();
   const deviceId =
-    +location?.search.replace("?", "").split("deviceId=")[1] || 25941;
+    +location?.search.split("deviceId=")[1].split("&")[0] || 25941;
+  const date =
+    dayjs(location?.search.split("date=")[1], "YYYY-MM-DD") || dayjs();
   const texte = articlesJSON.fakeArticles;
   const articles = articlesJSON.articles;
   const [open, setOpen] = useState(false);
@@ -321,15 +323,15 @@ const ArticleTidmarsh = () => {
                   <Chart
                     humiditySensorId={humiditySensor?.id}
                     temperatureSensorId={temperatureSensor?.id}
-                    from={dayjs().subtract(1, "day").subtract(1, "year")}
-                    to={dayjs().subtract(1, "year")}
+                    from={date.subtract(1, "day").subtract(1, "year")}
+                    to={date.subtract(1, "year")}
                   />
                 )}
                 {whiteLightSensor && (
                   <Histo
                     whiteLightSensorId={whiteLightSensor?.id}
-                    from={dayjs().subtract(1, "day").subtract(1, "year")}
-                    to={dayjs().subtract(1, "year")}
+                    from={date.subtract(1, "day").subtract(1, "year")}
+                    to={date.subtract(1, "year")}
                   />
                 )}
               </Grid.Column>
@@ -396,7 +398,9 @@ const ArticleTidmarsh = () => {
                   contenuArticle={articles[4].contenu}
                 />
                 {texte[5]}
-                <h1 className="titre2">23/10/2020</h1>
+                <h1 className="titre2">
+                  {dayjs(date, "YYYY-MM-DD")?.format("DD/MM/YYYY")}
+                </h1>
               </Grid.Column>
             </Grid>
             {/* <h1 className="titre2">GROS TITRE EXEMPLE 3</h1> */}
