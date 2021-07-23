@@ -26,48 +26,46 @@ axios.defaults.baseURL = "https://chain-api.media.mit.edu";
 function App() {
   return (
     <div className="App">
-      <div>
-        <Router>
-          <div>
-            <nav className="Navbar">
-              <div className="lien-accueil">
-                <Link to="/">
-                  <Image className="logo-petit" src="../images/logo-petit.svg" style={{ width: 90 }} />
-                </Link>
-              </div>
+      <Router>
+        <div style={{ height: '100%' }}>
+          <nav className="Navbar">
+            <div className="lien-accueil">
+              <Link to="/">
+                <Image className="logo-petit" src="../images/logo-petit.svg" style={{ width: 90 }} />
+              </Link>
+            </div>
 
-              <div className="lien-a-propos">
-                <Link to="/a-propos">À Propos</Link>
-              </div>
-              <div className="lien-kiosque">
-                <Link to="/kiosque">Le Kiosque</Link>
-              </div>
-            </nav>
+            <div className="lien-a-propos">
+              <Link to="/a-propos">À Propos</Link>
+            </div>
+            <div className="lien-kiosque">
+              <Link to="/kiosque">Le Kiosque</Link>
+            </div>
+          </nav>
 
-            {/* A <Switch> looks through its children <Route>s and
+          {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-            <Switch>
-              <Route path="/a-propos">
-                <APropos />
-              </Route>
-              <Route path="/kiosque">
-                <Kiosque />
-              </Route>
-              <Route path="/article/1">
-                <QueryClientProvider client={queryClient}>
-                    <PageArticle>
-                      <Article1 />
-                    </PageArticle>
-                </QueryClientProvider>
-              </Route>
-              <Route exact path="/">
-                <Accueil />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
-        <Footer />
-      </div>
+          <Switch>
+            <Route path="/a-propos">
+              <APropos />
+            </Route>
+            <Route path="/kiosque">
+              <Kiosque />
+            </Route>
+            <Route path="/article/1">
+              <QueryClientProvider client={queryClient}>
+                <PageArticle>
+                  <Article1 />
+                </PageArticle>
+              </QueryClientProvider>
+            </Route>
+            <Route exact path="/">
+              <Accueil />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+      <Footer />
       {/* <QueryClientProvider client={queryClient}>
         <Container>
           <PageArticle>

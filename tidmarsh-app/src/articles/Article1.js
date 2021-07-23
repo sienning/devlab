@@ -49,7 +49,6 @@ const Article1 = ({ isLoading }) => {
 
   // -------------------------------------
   const toggleHeron = () => {
-    console.log("toggle heron");
     let idHeron = document.getElementById("heron-img");
     let leftPos = 0;
     let bottomPos = -900;
@@ -162,7 +161,7 @@ const Article1 = ({ isLoading }) => {
                   style={{ marginTop: "10px" }}
                   src="../images/barre-HP.jpg"
                 />
-                <p className="article animate__animated" onClick={toggleShakeY}>
+                <p className="article animate__animated" onClick={toggleWobble}>
                   {" "}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -346,7 +345,6 @@ const Article1 = ({ isLoading }) => {
                 <h1 className="titre2">23/10/2020</h1>
               </Grid.Column>
             </Grid>
-            {/* <h1 className="titre2">GROS TITRE EXEMPLE 3</h1> */}
           </div>
         </div>
       )}

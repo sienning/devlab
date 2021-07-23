@@ -8,12 +8,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap');
 
-
 body {
   height: 100%;
   margin: 0;
   color : #302f31 !important;
-  height: 100%;
   width: 100%;
   background-color: #ece8dc !important;
   background-image: url('./images/daily.png') !important;
@@ -26,13 +24,15 @@ body {
   letter-spacing: -0.6px;
   line-height: 1.1;
 }
+.App {
+  height: 100%;
+}
 
 .App .Navbar{
   font-size: 30px;
   display: inline-block;
   text-decoration: none;
   width: 100%;
-  /* height: 150px; */
   padding: 10px 30px;
   color: #1d1d1c;
 }
@@ -47,13 +47,14 @@ body {
 .Navbar .lien-accueil {
   float: left;
 }
-.Navbar .lien-a-propos, .Navbar .lien-kiosque {
+.lien-a-propos, .lien-kiosque {
   float: right;
   height: 100%;
   padding-top: 40px;
   text-align: center;
   font-family: 'Grenze Gotisch', cursive;
   margin-right: 20px;
+  color: #1d1d1c;
 }
 
 .Navbar a { 
@@ -64,21 +65,104 @@ body {
   color: #b8964d;
 }
 
+.accueil-corps > #root {
+  height: 100%;
+}
+
 .accueil {
   font-size: 20px;
 }
+
+.daily {
+  transition: 0.8s;
+  -webkit-animation: glow 2s ease-in-out infinite alternate !important;
+  -moz-animation: glow 2s ease-in-out infinite alternate !important;
+  animation: glowLetter 2s ease infinite alternate !important;
+}
+
+.daily:hover {
+  transition: 0.5s;
+  -webkit-animation: glow 1s ease-in-out infinite alternate !important;
+  -moz-animation: glow 1s ease-in-out infinite alternate !important;
+  animation: glowLetterHover 1s ease infinite alternate !important;
+}
+
+@keyframes glowLetter {
+  0% { 
+      text-shadow: 0 0 20px #b8964d;
+  }
+  30% { 
+    text-shadow: 0 0 20px transparent;
+}
+  30% { 
+      text-shadow: 0 0 20px transparent;
+  }
+  68%, 72% { 
+      text-shadow: 0 0 20px #b8964d;
+  }
+  100% {text-shadow: 0 0 20px #b8964d;
+  }
+}
+@keyframes glowLetterHover {
+  0% { 
+      text-shadow: 0 0 30px #b8964d;
+  }
+  30% { 
+      text-shadow: 0 0 30px #ad9a71;
+  }
+  68%, 72% { 
+      text-shadow: 0 0 30px #b8964d;
+  }
+  100% {text-shadow: 0 0 30px #c39e4d;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+     opacity: 0;
+     transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}  
+@-webkit-keyframes fadeInDown {
+  0% {
+     opacity: 0;
+     -webkit-transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     -webkit-transform: translateY(0);
+  }
+}
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+.animated {
+  -webkit-animation-duration: 10s;
+  animation-duration: 7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 #header-title {
   margin: auto;
-  padding-top: 100px;
   width: 100%;
   transition: 0.2s;
   top: 0;
   height: fit-content;
+  padding: 0 200px;
+  justify-content: center;
+  display: flex;
+  vertical-align: middle;
+  height: 70%;
 }
 
 .corps .articles-header {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
 }
 
 .accueil .article-img {
@@ -247,8 +331,6 @@ i.icon.archive:before {
 .kiosque .cover-article-img {
   width:310px;
   height:310px;
-  /* background: #cecec2; */
-  
 }
 
 .kiosque .header-article-kiosque {
@@ -303,6 +385,13 @@ i.icon.archive:before {
   bottom : -900px;
 }
 
+/* A PROPOS */
+.a-propos {
+  font-size: medium;
+}
+
+/* -------- */
+
 /* FOOTER */
 footer {
   margin-top: 50px;
@@ -310,4 +399,6 @@ footer {
   background-color: #f1f0ec;
   min-height: 250px;
   padding-top: 50px;
+  bottom: 0,
+
 }

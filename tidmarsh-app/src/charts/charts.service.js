@@ -2,9 +2,9 @@ import axios from "axios";
 import dayjs from "dayjs";
 import { useQuery } from "react-query";
 
-const WHITE_LIGHT_ENDPOINT = "/aggregate_data/?sensor_id=9913&aggtime=1h";
-const HUMIDITY_ENDPOINT = "/aggregate_data/?sensor_id=9909&aggtime=1h";
-const TEMPERATURE_ENDPOINT = "/aggregate_data/?sensor_id=9908&aggtime=1h";
+const WHITE_LIGHT_ENDPOINT = "/aggregate_data/?sensor_id=9910&aggtime=1h";
+const HUMIDITY_ENDPOINT = "/aggregate_data/?sensor_id=9907&aggtime=1h";
+const TEMPERATURE_ENDPOINT = "/aggregate_data/?sensor_id=9903&aggtime=1h";
 
 const getLastDayData = (datas) => {
   const yesterday = dayjs().subtract(1, "day").format("YYYY-MM-DD").toString();
