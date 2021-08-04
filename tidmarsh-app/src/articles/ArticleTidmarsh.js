@@ -34,7 +34,7 @@ const ArticleTidmarsh = () => {
   };
   const toggleFlash = (e) => {
     e.currentTarget.classList.add("animate__flash");
-    rmToggle(e.currentTarget, "animate__flash");
+    // rmToggle(e.currentTarget, "animate__flash");
   };
   const toggleBounceOut = (e) => {
     e.currentTarget.classList.add("animate__bounceOutDown");
@@ -187,7 +187,9 @@ const ArticleTidmarsh = () => {
                 depuis le haut des arbres et sous l'eau.
               </Grid.Column>
             </Grid>
-            <h1 className="titre1">Zone humide, milieu en danger !</h1>
+            <h1 className="titre1 animate__animated animate__tada animate__infinite">
+              Zone humide, milieu en danger !
+            </h1>
             <h1 className="titre7">
               Le dossier du mois :{" "}
               <span className="titre6 mini-titre">
@@ -214,14 +216,10 @@ const ArticleTidmarsh = () => {
                   texteArticle={texte[0]}
                   headerArticle={articles[0].titre}
                   contenuArticle={articles[0].contenu}
+                  animation="shakeY"
                 />
                 <Image src="../images/barre-2-HP.jpg" />
-                <span
-                  className="article animate__animated"
-                  onClick={toggleFlash}
-                >
-                  {texte[4]}
-                </span>
+                <span>{texte[4]}</span>
               </Grid.Column>
               <Grid.Column width={3}>
                 <h1 className="titre2">Wetland</h1>
@@ -229,13 +227,13 @@ const ArticleTidmarsh = () => {
                   texteArticle={texte[1]}
                   headerArticle={articles[1].titre}
                   contenuArticle={articles[1].contenu}
+                  animation="shakeX"
                 />
                 <Image
                   style={{ marginTop: "10px" }}
                   src="../images/barre-HP.jpg"
                 />
-                <p className="article animate__animated" onClick={toggleWobble}>
-                  {" "}
+                <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -256,11 +254,12 @@ const ArticleTidmarsh = () => {
                 <div className="titre2 mini-titre">
                   Grands Lieux inquiétants ?
                 </div>
-                <div id="modal-article" >
+                <div id="modal-article">
                   <ModalArticle
                     texteArticle={texte[4]}
                     headerArticle={articles[2].titre}
                     contenuArticle={articles[2].contenu}
+                    animation="swing"
                   />
                 </div>
               </Grid.Column>
@@ -278,7 +277,6 @@ const ArticleTidmarsh = () => {
                                     src="https://tidmarsh.media.mit.edu/b60f3d6d-01a3-4cf6-a5c1-0cb1bdc0f0c1">
                                 </iframe> */}
                 <p>
-                  {" "}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -300,11 +298,10 @@ const ArticleTidmarsh = () => {
                 <div
                   className="animate__animated titre2 mini-titre article"
                   id="test"
-                  onClick={toggleWobble}
                 >
                   The Daily Data'Venir
                 </div>
-                <p className="article">
+                <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
@@ -349,21 +346,23 @@ const ArticleTidmarsh = () => {
                     marginBottom: "6px",
                   }}
                 />
-                {humiditySensor && temperatureSensor && (
-                  <Chart
-                    humiditySensorId={humiditySensor?.id}
-                    temperatureSensorId={temperatureSensor?.id}
-                    from={from}
-                    to={to}
-                  />
-                )}
-                {whiteLightSensor && (
-                  <Histo
-                    whiteLightSensorId={whiteLightSensor?.id}
-                    from={from}
-                    to={to}
-                  />
-                )}
+                <div className="animate__animated animate__pulse animate__infinite">
+                  {humiditySensor && temperatureSensor && (
+                    <Chart
+                      humiditySensorId={humiditySensor?.id}
+                      temperatureSensorId={temperatureSensor?.id}
+                      from={from}
+                      to={to}
+                    />
+                  )}
+                  {whiteLightSensor && (
+                    <Histo
+                      whiteLightSensorId={whiteLightSensor?.id}
+                      from={from}
+                      to={to}
+                    />
+                  )}
+                </div>
               </Grid.Column>
               <Grid.Column width={1}>
                 <h1 className="titre2">
@@ -403,11 +402,15 @@ const ArticleTidmarsh = () => {
                   irure dolor in reprehenderit in voluptate velit esse cillum
                   dolore eu fugiat nulla pariatur.
                 </p>
-                <ModalImage srcImage="../images/zh-hum.jpg" />
+                <ModalImage
+                  srcImage="../images/zh-hum.jpg"
+                  animation="bounce"
+                />
                 <ModalArticle
                   texteArticle={texte[3]}
                   headerArticle={articles[3].titre}
                   contenuArticle={articles[3].contenu}
+                  animation="flash"
                 />
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -426,6 +429,7 @@ const ArticleTidmarsh = () => {
                   texteArticle={texte[4] + texte[5]}
                   headerArticle={articles[4].titre}
                   contenuArticle={articles[4].contenu}
+                  animation="tada"
                 />
                 {texte[5]}
                 <h1 className="titre2">

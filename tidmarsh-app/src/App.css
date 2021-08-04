@@ -1,25 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Felipa&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Felipa&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bevan&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch&display=swap");
+
+:root {
+  --animate-duration: 20s;
+}
 
 body {
   height: 100%;
   margin: 0;
-  color : #302f31 !important;
+  color: #302f31 !important;
   width: 100%;
   background-color: #ece8dc !important;
-  background-image: url('./images/daily.png') !important;
+  background-image: url("./images/daily.png") !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   text-align: justify;
-  font-family: 'Felipa', cursive;
+  font-family: "Felipa", cursive;
   font-size: 0.8em !important;
   letter-spacing: -0.6px;
   line-height: 1.1;
@@ -28,7 +32,7 @@ body {
   height: 100%;
 }
 
-.App .Navbar{
+.App .Navbar {
   font-size: 30px;
   display: inline-block;
   text-decoration: none;
@@ -47,21 +51,22 @@ body {
 .Navbar .lien-accueil {
   float: left;
 }
-.lien-a-propos, .lien-kiosque {
+.lien-a-propos,
+.lien-kiosque {
   float: right;
   height: 100%;
   padding-top: 40px;
   text-align: center;
-  font-family: 'Grenze Gotisch', cursive;
+  font-family: "Grenze Gotisch", cursive;
   margin-right: 20px;
   color: #1d1d1c;
 }
 
-.Navbar a { 
+.Navbar a {
   color: #1d1d1c;
   transition: 0.3s;
 }
-.Navbar a:hover { 
+.Navbar a:hover {
   color: #b8964d;
 }
 
@@ -88,53 +93,57 @@ body {
 }
 
 @keyframes glowLetter {
-  0% { 
-      text-shadow: 0 0 20px #b8964d;
+  0% {
+    text-shadow: 0 0 20px #b8964d;
   }
-  30% { 
+  30% {
     text-shadow: 0 0 20px transparent;
-}
-  30% { 
-      text-shadow: 0 0 20px transparent;
   }
-  68%, 72% { 
-      text-shadow: 0 0 20px #b8964d;
+  30% {
+    text-shadow: 0 0 20px transparent;
   }
-  100% {text-shadow: 0 0 20px #b8964d;
+  68%,
+  72% {
+    text-shadow: 0 0 20px #b8964d;
+  }
+  100% {
+    text-shadow: 0 0 20px #b8964d;
   }
 }
 @keyframes glowLetterHover {
-  0% { 
-      text-shadow: 0 0 30px #b8964d;
+  0% {
+    text-shadow: 0 0 30px #b8964d;
   }
-  30% { 
-      text-shadow: 0 0 30px #ad9a71;
+  30% {
+    text-shadow: 0 0 30px #ad9a71;
   }
-  68%, 72% { 
-      text-shadow: 0 0 30px #b8964d;
+  68%,
+  72% {
+    text-shadow: 0 0 30px #b8964d;
   }
-  100% {text-shadow: 0 0 30px #c39e4d;
+  100% {
+    text-shadow: 0 0 30px #c39e4d;
   }
 }
 
 @keyframes fadeInDown {
   0% {
-     opacity: 0;
-     transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-     opacity: 1;
-     transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
-}  
+}
 @-webkit-keyframes fadeInDown {
   0% {
-     opacity: 0;
-     -webkit-transform: translateY(-20px);
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
   }
   100% {
-     opacity: 1;
-     -webkit-transform: translateY(0);
+    opacity: 1;
+    -webkit-transform: translateY(0);
   }
 }
 .fadeInDown {
@@ -162,7 +171,7 @@ body {
 }
 
 .corps .articles-header {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .accueil .article-img {
@@ -176,7 +185,7 @@ body {
 }
 
 .accueil .voir-plus {
-  font-family: 'Grenze Gotisch', cursive;
+  font-family: "Grenze Gotisch", cursive;
   color: #1d1d1c;
   transition: 0.2s;
   float: right;
@@ -186,12 +195,9 @@ body {
   text-shadow: 0 0 10px #b8964d;
 }
 
-
 .header {
   margin-bottom: 30px !important;
 }
-
-
 
 .border-article {
   border: 5px solid transparent;
@@ -205,7 +211,7 @@ p {
 }
 
 .texte {
-  font-family: 'Grenze Gotisch', cursive;
+  font-family: "Grenze Gotisch", cursive;
   line-height: 1.4;
   font-size: 1.4em !important;
 }
@@ -214,47 +220,48 @@ p {
   letter-spacing: 4px;
   text-align: center;
   font-size: 6em !important;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
+  --animate-duration: 4s;
 }
 
 .titre2 {
   font-size: 3.6em !important;
-  font-family: 'Patua One', cursive;
+  font-family: "Patua One", cursive;
   text-transform: uppercase;
 }
 
 .titre3 {
   letter-spacing: 3px;
   font-size: 4em !important;
-  font-family: 'Bevan', cursive;
+  font-family: "Bevan", cursive;
   text-transform: uppercase;
 }
 
 .titre4 {
   letter-spacing: 3px;
   font-size: 4em !important;
-  font-family: 'Londrina Solid', cursive;
+  font-family: "Londrina Solid", cursive;
   text-transform: uppercase;
 }
 
 /* TITRE Daily data'venir */
 .titre5 {
   font-size: 5em !important;
-  font-family: 'Special Elite', cursive;
+  font-family: "Special Elite", cursive;
   text-align: center;
   text-transform: uppercase;
 }
 
 .titre6 {
-  font-family: 'Noto Serif', serif;
+  font-family: "Noto Serif", serif;
   font-size: 2em !important;
   text-align: center;
   text-transform: uppercase;
 }
 
 .titre7 {
-  font-family: 'Grenze Gotisch', cursive;
+  font-family: "Grenze Gotisch", cursive;
   font-size: 2em !important;
   text-align: center;
   text-transform: uppercase;
@@ -263,7 +270,7 @@ p {
 .titre-lettre {
   text-align: center !important;
   font-size: 10em !important;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
   text-transform: uppercase;
 }
 
@@ -282,30 +289,30 @@ p {
 
 .imageArticle:hover {
   cursor: pointer;
-  box-shadow : 0 0 10px #b8964d;
+  box-shadow: 0 0 10px #b8964d;
 }
 
-.ui.modal>.content, .ui.modal>.header {
+.ui.modal > .content,
+.ui.modal > .header {
   background: none !important;
 }
 
 .ui.active.modal {
   background-color: #ece8dc;
-  background-image: url('./images/daily.png');
+  background-image: url("./images/daily.png");
 }
 
 i.icon.close:before {
-  content : "X" !important;
-  font-family: 'PATUA ONE';
+  content: "X" !important;
+  font-family: "PATUA ONE";
 }
 
 i.icon.archive:before {
-  content : url("./images/main-droite.jpg") !important;
+  content: url("./images/main-droite.jpg") !important;
 }
 
-
-.ui.header>.icon+.content {
-  font-family: 'Patua One', cursive;
+.ui.header > .icon + .content {
+  font-family: "Patua One", cursive;
   text-transform: uppercase;
 }
 
@@ -323,14 +330,14 @@ i.icon.archive:before {
 
 /* KIOSQUE */
 .kiosque .article-img {
-  width:300px;
-  height:300px;
-  object-fit:cover;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
 }
 
 .kiosque .cover-article-img {
-  width:310px;
-  height:310px;
+  width: 310px;
+  height: 310px;
 }
 
 .kiosque .header-article-kiosque {
@@ -341,7 +348,6 @@ i.icon.archive:before {
 
 .kiosque .grid-col-kiosque {
   margin: auto;
-
 }
 .kiosque .reveal-kiosque {
   width: 300px;
@@ -374,15 +380,14 @@ i.icon.archive:before {
   .kiosque .reveal-kiosque {
     width: 300px;
   }
-
 }
 
 .heron-img {
   display: none;
-  width : 700px;
+  width: 700px;
   position: absolute;
-  left : 0px;
-  bottom : -900px;
+  left: 0px;
+  bottom: -900px;
 }
 
 /* A PROPOS */
@@ -399,6 +404,5 @@ footer {
   background-color: #f1f0ec;
   min-height: 250px;
   padding-top: 50px;
-  bottom: 0,
-
+  bottom: 0;
 }

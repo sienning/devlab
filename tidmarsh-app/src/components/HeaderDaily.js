@@ -9,29 +9,33 @@ const HeaderDaily = ({ temperature, humidity, pressure }) => {
           {/* JEU CONCOURS */}
           <span className="titre4 mini-titre">Jeu concours</span>
           <br />
-          {humidity?.value}
-          {humidity?.unit} d’humidité sur la zone humide est de Tidmarsh soit{" "}
-          <span className="titre2 mini-titre">
+          <div className="mini-titre animate__animated animate__rubberBand animate__infinite">
+            <strong>{humidity?.value}</strong>
+            {humidity?.unit} d’humidité sur la zone humide est de Tidmarsh
+          </div>
+          <span className="mini-titre">
             {humidity?.value}
             {humidity?.unit}
           </span>
-          <span className="titre3 mini-titre"> + 3%</span>
+          <span className="mini-titre"> + 3%</span>
           <br />
           L’équivalent du gain en humidité des 19 derniers mois sur cette zone !
         </Grid.Column>
         <Grid.Column width={4}>
           {/* METEO */}
-          <span className="titre3 mini-titre">Météo du jour</span>
-          <br />
-          <Icon loading name="sun" />
-          <span className="titre2 mini-titre">
-            {temperature?.value} {temperature?.unit}{" "}
-          </span>
-          <br />
-          <Icon loading name="long arrow alternate down" />
-          <span className="titre2 mini-titre">
-            {pressure?.value} {pressure?.unit}{" "}
-          </span>
+          <div className="animate__animated animate__tada animate__infinite">
+            <span className="titre3 mini-titre">Météo du jour</span>
+            <br />
+            <Icon loading name="sun" />
+            <span className="titre2 mini-titre">
+              {temperature?.value} {temperature?.unit}{" "}
+            </span>
+            <br />
+            <Icon loading name="long arrow alternate down" />
+            <span className="titre2 mini-titre">
+              {pressure?.value} {pressure?.unit}{" "}
+            </span>
+          </div>
         </Grid.Column>
 
         <Grid.Column width={8}>
@@ -39,7 +43,10 @@ const HeaderDaily = ({ temperature, humidity, pressure }) => {
           <br />
           {/* SIGNE ASTROLOGIQUE */}
           <Grid columns={2} style={{ marginTop: "-20px" }}>
-            <Grid.Column width={2}>
+            <Grid.Column
+              width={2}
+              className="animate__animated animate__wobble animate__infinite"
+            >
               <Image src="../images/grenouille.png" width={30} />
             </Grid.Column>
             <Grid.Column width={14}>
@@ -48,7 +55,10 @@ const HeaderDaily = ({ temperature, humidity, pressure }) => {
             </Grid.Column>
           </Grid>
           <Grid columns={2} style={{ marginTop: "-28px" }}>
-            <Grid.Column width={2}>
+            <Grid.Column
+              width={2}
+              className="animate__animated animate__headShake animate__infinite"
+            >
               <Image src="../images/cerf.png" width={30} />
             </Grid.Column>
             <Grid.Column width={14}>
@@ -58,7 +68,10 @@ const HeaderDaily = ({ temperature, humidity, pressure }) => {
             </Grid.Column>
           </Grid>
           <Grid columns={2} style={{ marginTop: "-28px" }}>
-            <Grid.Column width={2}>
+            <Grid.Column
+              width={2}
+              className="animate__animated animate__shakeX animate__infinite"
+            >
               <Image src="../images/papillion.png" width={30} />
             </Grid.Column>
             <Grid.Column width={14}>
