@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Grid, Header, Image, Select } from "semantic-ui-react";
+import { Container, Divider, Grid, Header, Image, Select } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { TIDMARSH_UPDATES_DEVICES } from "../../utils/api";
 import dayjs from "dayjs";
@@ -57,22 +57,50 @@ const Accueil = () => {
             de sa flore.
           </p>
         </span>
-        <div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          Tuto rapide
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
-
+        <br />
+        <br />
+        <br />
+        <Grid columns={2}>
+          <Grid.Column>
+            <Image src="/images/découverte-1.gif" size="large" />
+          </Grid.Column>
+          <Grid.Column>
+            <p>
+              Passez la souris dans les moindres recoins pour découvrir le Daily Data'Venir.
+            </p>
+          </Grid.Column>
+        </Grid>
+        <br />
+        <br />
+        <Grid columns={2}>
+          <Grid.Column>
+            <p>
+              Attention ! Certains éléments ne sont là que pour vous piéger...
+            </p>
+          </Grid.Column>
+          <Grid.Column>
+            <Image src="/images/découverte-2.gif" size="large" />
+          </Grid.Column>
+        </Grid>
+        <br />
+        <br />
+        <Grid columns={2}>
+          <Grid.Column>
+            <Image src="/images/découverte-3.gif" size="large" />
+          </Grid.Column>
+          <Grid.Column>
+            <p>
+              D'autres vous permettent de découvrir des informations importantes sur les Zone Humides !
+            </p>
+          </Grid.Column>
+        </Grid>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Divider />
         <div className="corps" style={{ paddingBottom: 20 }}>
-          <Header className="articles-header">Tidmarsh</Header>
           <div>
             <Header as="h4" className="ui label">
               Capteur
@@ -93,26 +121,29 @@ const Accueil = () => {
               textAlign="center"
               columns={3}
             >
-              {sevenLastDays.map((day) => (
-                <Grid.Column style={{ marginBottom: 20 }}>
-                  <Header>
-                    {capitalizeFirstLetter(
-                      day?.locale("fr")?.format("dddd D MMMM YYYY")
-                    )}
-                  </Header>
-                  <Link
-                    to={`/article/tidmarsh?deviceId=${deviceId}&date=${day?.format(
-                      "YYYY-MM-DD"
-                    )}`}
-                  >
-                    <Image
-                      className="article-img"
-                      href="/article/tidmarsh"
-                      src="./images/articles/article-1.png"
-                    />
-                  </Link>
-                </Grid.Column>
-              ))}
+              {
+                sevenLastDays.map((day) => (
+                  <Grid.Column style={{ marginBottom: 20 }}>
+                    <Header>
+                      {capitalizeFirstLetter(
+                        day?.locale("fr")?.format("dddd D MMMM YYYY")
+                      )}
+                    </Header>
+                    <Link
+                      to={`/article/tidmarsh?deviceId=${deviceId}&date=${day?.format(
+                        "YYYY-MM-DD"
+                      )}`}
+                    >
+                      <Image
+                        className="article-img"
+                        href="/article/tidmarsh"
+                        size="medium"
+                        src={`./images/articles/galerie-${Math.floor(Math.random() * 5 + 1)}.png`}
+                      />
+                    </Link>
+                  </Grid.Column>
+                ))
+              }
             </Grid>
             <Link className="voir-plus" to="/kiosque">
               Voir plus
