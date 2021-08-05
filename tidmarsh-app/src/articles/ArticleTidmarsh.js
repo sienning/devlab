@@ -167,7 +167,7 @@ const ArticleTidmarsh = () => {
                   style={{ marginTop: "6px" }}
                 />
                 <Image
-                  src="../images/MIT_ML_Logo.gif"
+                  src="../images/mit-logo.gif"
                   style={{ maxWidth: "245px" }}
                 />
               </Grid.Column>
