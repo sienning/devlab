@@ -21,7 +21,7 @@ class APropos extends Component {
                     </Grid.Column>
                     <Grid.Column width={6}>
                         <Image
-                            src="../images/MIT_ML_Logo.gif"
+                            src="../images/mit-logo.gif"
                         />
                     </Grid.Column>
                 </Grid>
