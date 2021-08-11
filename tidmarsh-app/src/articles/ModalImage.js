@@ -12,6 +12,7 @@ const ModalImage = ({ srcImage, animation = "heartBeat" }) => {
       trigger={
         <Image
           className={`imageArticle animate__animated animate__${animation} animate__infinite`}
+
           src={srcImage}
         />
       }

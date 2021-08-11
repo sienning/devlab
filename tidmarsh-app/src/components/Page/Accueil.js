@@ -130,6 +130,18 @@ const Accueil = () => {
                       )}
                     </Header>
                     <Link
+                      to={`/article/article2?deviceId=${deviceId}&date=${day?.format(
+                        "YYYY-MM-DD"
+                      )}`}
+                    >
+                      <Image
+                        className="article-img"
+                        href="/article/tidmarsh"
+                        size="medium"
+                        src={`./images/articles/galerie-${Math.floor(Math.random() * 5 + 1)}.png`}
+                      />
+                    </Link>
+                    <Link
                       to={`/article/tidmarsh?deviceId=${deviceId}&date=${day?.format(
                         "YYYY-MM-DD"
                       )}`}

@@ -75,7 +75,7 @@ const HeaderDaily = ({ temperature, humidity, pressure }) => {
               <Image src="../images/papillion.png" width={30} />
             </Grid.Column>
             <Grid.Column width={14}>
-              Pour les papillons, il est temps de prendre votre envole et de
+              Pour les papillons, il est temps de prendre votre envol et de
               vous reprendre en main, ne vous laissez pas surprendre par les
               araignées -10% de papillons de présence depuis 30 jours.
             </Grid.Column>

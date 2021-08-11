@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 import ArticleTidmarsh from "./articles/ArticleTidmarsh";
+import Article2 from "./articles/Article2";
 import PageArticle from "./articles/PageArticle";
 const queryClient = new QueryClient();
 
@@ -33,30 +34,35 @@ function App() {
             </div>
           </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-            <Switch>
-              <Route path="/a-propos">
-                <APropos />
-              </Route>
-              <Route path="/kiosque">
-                <Kiosque />
-              </Route>
-              <Route path="/article/tidmarsh">
-                <QueryClientProvider client={queryClient}>
-                  <PageArticle>
-                    <ArticleTidmarsh />
-                  </PageArticle>
-                </QueryClientProvider>
-              </Route>
-              <Route exact path="/">
-                <Accueil />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
-        <Footer />
-      </div>
+          <Switch>
+            <Route path="/a-propos">
+              <APropos />
+            </Route>
+            <Route path="/kiosque">
+              <Kiosque />
+            </Route>
+            <Route path="/article/tidmarsh">
+              <QueryClientProvider client={queryClient}>
+                <PageArticle>
+                  <ArticleTidmarsh />
+                </PageArticle>
+              </QueryClientProvider>
+            </Route>
+            <Route path="/article/article2">
+              <QueryClientProvider client={queryClient}>
+                <PageArticle>
+                  <Article2 />
+                </PageArticle>
+              </QueryClientProvider>
+            </Route>
+            <Route exact path="/">
+              <Accueil />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+      <Footer />
+    </div>
   );
 }
 
