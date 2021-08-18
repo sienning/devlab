@@ -204,7 +204,7 @@ const Article2 = () => {
             <Grid stackable columns={3}>
               <Grid.Column width={5}>
                 <ModalImage
-                  srcImage="../images/zh-hum.jpg"
+                  srcImage="../images/champignons.gif"
                   animation="bounce"
                 />
                 <Image
@@ -240,8 +240,8 @@ const Article2 = () => {
                 <div id="modal-article">
                   <ModalArticle
                     texteArticle={texte[6]}
-                    headerArticle={articles[4].titre}
-                    contenuArticle={articles[4].contenu}
+                    headerArticle={articles[7].titre}
+                    contenuArticle={articles[7].contenu}
                     animation="bounce"
                   />
                 </div>

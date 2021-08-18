@@ -33,7 +33,7 @@ const Accueil = () => {
                 "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
             }}
           >
-            Bienvenu sur le site du Daily Data'Venir !
+            Le site du Daily Data'Venir !
           </Header>
           <p
             style={{
