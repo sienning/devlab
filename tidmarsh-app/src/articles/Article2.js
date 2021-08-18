@@ -275,10 +275,11 @@ const Article2 = () => {
                 />
                 <p className="article heron" onClick={toggleHeron}> {texte[11]} </p>
                 <p> {texte[14]} </p>
+                <p> {texte[9]} </p>
 
               </Grid.Column>
 
-              <Grid.Column width={7}>
+              <Grid.Column width={4}>
                 <div
                   className="animate__animated titre2 mini-titre article"
                   id="test"
@@ -286,12 +287,13 @@ const Article2 = () => {
                   <a style={{ color: "black" }} target="_blank" href="https://www.gers.gouv.fr/Politiques-publiques/Environnement/Gestion-de-l-eau/Eau-et-biodiversite-jardins-especes-protegees-zones-humides-Natura-2000/L-importance-des-zones-humides">Zones Humides en France</a>
                 </div>
                 <p> {texte[10]} </p>
-                <ModalImage srcImage="../images/zh-nb.png" />
-                <p> {texte[13]} </p>
+                <ModalImage srcImage="../images/mycorhize.gif" animation="swing" />
+                
+                <p> {texte[10]} </p>
 
               </Grid.Column>
 
-              <Grid.Column width={5}>
+              <Grid.Column width={10}>
                 <Image
                   style={{ marginTop: "10px" }}
                   src="../images/barre-2-HP.jpg"
@@ -313,6 +315,7 @@ const Article2 = () => {
                     />
                   )}
                 </div>
+                <p> {texte[13]} </p>
               </Grid.Column>
             </Grid>
 

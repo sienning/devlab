@@ -82,9 +82,11 @@
     },
     {
       "id": "article7",
-      "titre": "Champignons particuliers",
+      "titre": "Champignons particuliers : Les Mycorhizes",
       "contenu": [
-        "Les mycorhizes naissent de la rencontre entre un champignon mycorhizien et la racine d'une plante. Cette rencontre permet aux deux partenaires d'entrer en symbiose. Les champignons favorisent l’absorption des éléments nutritifs tout en s'offrant en rempart contre les polluants."
+        "Les mycorhizes naissent de la rencontre entre un champignon mycorhizien et la racine d'une plante. Cette rencontre permet aux deux partenaires d'entrer en symbiose. Les champignons favorisent l’absorption des éléments nutritifs tout en s'offrant en rempart contre les polluants.",
+        "Les mycorhizes permettent aux plantes d’augmenter l’efficacité de leur système radiculaire car les filaments qui sortent des racines ou les entourent sont parfois très longs et forment de véritables radicelles supplémentaires. L’absorption des éléments minéraux est ainsi amplifiée, notamment, celle du phosphate et des oligoéléments. Ils améliorent également la résistance des végétaux à la sécheresse et à certains ravageurs, notamment aux nématodes.",
+        "En contrepartie, les mycorhizes profitent des éléments énergétiques puisés par la plantes et se nourrissent des substances carbonées fabriquées par le végétal auquel il s’est associé."
       ]
     }
   ],
