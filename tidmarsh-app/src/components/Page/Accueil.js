@@ -137,8 +137,9 @@ const Accueil = () => {
                       <Image
                         className="article-img"
                         href="/article/tidmarsh"
-                        size="medium"
+                        size="small"
                         src={`./images/articles/galerie-${Math.floor(Math.random() * 5 + 1)}.png`}
+                        circular
                       />
                     </Link>
                     <Link
@@ -149,8 +150,9 @@ const Accueil = () => {
                       <Image
                         className="article-img"
                         href="/article/tidmarsh"
-                        size="medium"
+                        size="small"
                         src={`./images/articles/galerie-${Math.floor(Math.random() * 5 + 1)}.png`}
+                        circular
                       />
                     </Link>
                   </Grid.Column>
