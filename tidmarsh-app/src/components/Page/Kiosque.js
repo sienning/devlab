@@ -22,7 +22,6 @@ class Kiosque extends Component {
         return (
             <Container className="kiosque">
                 <Header style={{ fontFamily: "'Grenze Gotisch', cursive" }} as='h1'>Le Kiosque</Header>
-                {/* <Filtre /> */}
                 <Grid textAlign="center" stackable columns={3}>
 
                     {

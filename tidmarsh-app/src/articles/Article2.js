@@ -14,6 +14,7 @@ import { useLocation } from "react-router";
 import dayjs from "dayjs";
 import { getMidnightTimestamp, useSensorData } from "../charts/charts.service";
 import ModalImageArticle from "./ModalImageArticle";
+import ModalGif from "./ModalGif";
 
 const Article2 = () => {
   const location = useLocation();
@@ -346,7 +347,11 @@ const Article2 = () => {
                   contenuArticle={articles[4].contenu}
                   animation="tada"
                 />
-                <p> {texte[3]} </p>
+                <ModalGif
+                  texteArticle={texte[15]}
+                  headerArticle="Développement de la biodiversité"
+                  animation="swing"
+                />
 
                 <h1 className="titre2">
                   {dayjs(date, "YYYY-MM-DD")?.format("DD/MM/YYYY")}
